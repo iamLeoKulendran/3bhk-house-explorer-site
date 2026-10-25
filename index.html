@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>House Explorer</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="src/style.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three-0.180.0/three.module.min.js" } }
+  </script>
+  <script>
+    // Collected for local diagnostics (tools/capture_previews.py reads #diag); nothing is sent anywhere.
+    window.__diag = { errors: [] };
+    function reportError(message) {
+      __diag.errors.push(message);
+      console.error('HOUSE_EXPLORER_ERROR ' + message);
+      var sub = document.getElementById('notice-sub');
+      if (sub) sub.textContent = 'Viewer error: ' + message;
+    }
+    addEventListener('error', e => reportError(String(e.message || (e.target && (e.target.src || e.target.href)) || e.type)), true);
+    addEventListener('unhandledrejection', e => reportError('unhandled rejection: ' + (e.reason && e.reason.message || e.reason)));
+  </script>
+  <script type="module" src="src/main.js"></script>
+<link rel="stylesheet" href="public.css"><script type="module" src="public-versions.js"></script></head>
+<body>
+  <header id="notice" role="note">
+    <strong id="notice-main">Conceptual model — NOT FOR CONSTRUCTION</strong>
+    <span id="notice-sub">Loading plan…</span>
+  <label class="public-version">Version <select id="public-plan" aria-label="House version"></select></label></header>
+
+  <main id="viewport">
+    <canvas id="scene" aria-label="3D house concept view"></canvas>
+    <div id="labels" aria-hidden="true"></div>
+  </main>
+
+  <nav id="controls" aria-label="View controls">
+    <div class="group" role="group" aria-label="View">
+      <button type="button" data-view="plan">Plan</button>
+      <button type="button" data-view="aerial">Aerial</button>
+      <button type="button" data-view="cutaway">Cutaway</button>
+      <button type="button" data-view="front" class="v2-only" hidden>Front</button>
+      <button type="button" data-view="frontage" hidden>Frontage</button>
+    </div>
+    <div class="group carport-toggle" role="group" aria-label="Carport floor alternative" hidden>
+      <button type="button" data-carport="A" title="V2.3 level: land + 0.10 m">Carport A · V2.3</button>
+      <button type="button" data-carport="B" title="Lower candidate: +1.20 m above the road datum">Carport B · lower</button>
+    </div>
+    <label class="group slider">
+      <span>Land level <output id="land-value">+1.75 m</output></span>
+      <input id="land" type="range" step="0.05">
+      <small id="levels-readout"></small>
+    </label>
+    <div class="group toggles">
+      <label><input id="show-labels" type="checkbox" checked> Labels</label>
+      <label><input id="show-tags" type="checkbox"> Detail labels</label>
+      <label><input id="show-dims" type="checkbox"> Provisional dimensions</label>
+      <label id="profile-toggle"><input id="show-profile" type="checkbox" checked> Profile</label>
+      <label class="v2-only" hidden title="Cutaway mode hides the roof for viewing; the house is roofed"><input id="show-roof" type="checkbox" checked> Roof</label>
+      <label id="railing-toggle" hidden title="Optional steel safety railing on the roof parapets (V2.5)"><input id="show-railing" type="checkbox" checked> Steel roof railing</label>
+    </div>
+  </nav>
+
+  <section id="profile" aria-label="Schematic approach profile" hidden></section>
+
+  <div id="cutaway-note" hidden>CUTAWAY VIEW — roof and upper walls are hidden for viewing only. The house is roofed.</div>
+
+  <aside id="info">
+    <section id="warnings" aria-live="polite"></section>
+    <details id="details">
+      <summary>Assumptions, areas &amp; derivation</summary>
+      <div id="details-body"></div>
+    </details>
+  </aside>
+
+  <pre id="diag" hidden></pre>
+</body>
+</html>

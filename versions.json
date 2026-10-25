@@ -1,0 +1,47 @@
+[
+  {
+    "id": "v2-1-reference-reconstruction",
+    "revision": "V2.1",
+    "title": "Reference-based 2D/3D reconstruction"
+  },
+  {
+    "id": "v2-2-frontage-route-correction",
+    "revision": "V2.2",
+    "title": "Frontage and pedestrian-route correction"
+  },
+  {
+    "id": "v2-3-front-gate-compact-site",
+    "revision": "V2.3",
+    "title": "Front-line gate and compact site composition"
+  },
+  {
+    "id": "v2-4-lower-carport-frontage",
+    "revision": "V2.4",
+    "title": "Frontage correction, lower-carport study and walking connection"
+  },
+  {
+    "id": "v2-5-utility-stair-rear-access",
+    "revision": "V2.5",
+    "title": "Utility stair, roof access and rear service yard"
+  },
+  {
+    "id": "v2-6-kitchen-laundry-circulation",
+    "revision": "V2.6",
+    "title": "Kitchen, laundry and circulation correction"
+  },
+  {
+    "id": "v2-7-open-living-utility-hall",
+    "revision": "V2.7",
+    "title": "Open living/hall and utility hall with laundry (owner-selected basis)"
+  },
+  {
+    "id": "v2-8-practical-optimization",
+    "revision": "V2.8",
+    "title": "Closed kitchen and circulation refinement — owner-authorized review concept"
+  },
+  {
+    "id": "v2-9-furniture-clearance-balance",
+    "revision": "V2.9",
+    "title": "Closed kitchen — balanced lounge clearance correction"
+  }
+]

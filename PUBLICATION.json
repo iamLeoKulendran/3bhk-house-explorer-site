@@ -1,0 +1,242 @@
+{
+  "sourceCommit": "75f1366a89c0f720bd9b5e023b6635ce487b005b",
+  "versions": [
+    "V2.1",
+    "V2.2",
+    "V2.3",
+    "V2.4",
+    "V2.5",
+    "V2.6",
+    "V2.7",
+    "V2.8",
+    "V2.9"
+  ],
+  "policy": "Runtime only; project records, source references and owner correspondence omitted. Geometry and warnings retained.",
+  "files": [
+    {
+      "file": "src/main.js",
+      "bytes": 63262,
+      "sha256": "59b9a4fb8e6dd49fc72b9b9420f9a6c61607e166e6699fe3989e65eeb1366585"
+    },
+    {
+      "file": "src/build-v2.js",
+      "bytes": 82632,
+      "sha256": "e173da8d236413bba6fd2a11b108eafb903497a3e47c1fe2ef995657a0bd18ea"
+    },
+    {
+      "file": "src/geometry.js",
+      "bytes": 25133,
+      "sha256": "eb51a5d3c544bced2147577ef92f495d0ab712300708d5bd7096f11ddec46228"
+    },
+    {
+      "file": "src/geometry-v2.js",
+      "bytes": 168813,
+      "sha256": "b90880b6acd31ea25932f73f2096f06c23289c3061b0b9eddc25abb6f32d1781"
+    },
+    {
+      "file": "src/section-svg.js",
+      "bytes": 77729,
+      "sha256": "3ab99ef9a74a4f7a4ef689ec3deb9d2b02acde3ac84244197860f688edf1f10f"
+    },
+    {
+      "file": "src/style.css",
+      "bytes": 7739,
+      "sha256": "5cfcbe587b398c4fc340ab4a948cd4f335e4e7551d72bf9825fdd1d054e8c6b3"
+    },
+    {
+      "file": "vendor/three-0.180.0/three.module.min.js",
+      "bytes": 338908,
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6"
+    },
+    {
+      "file": "vendor/three-0.180.0/three.core.min.js",
+      "bytes": 381124,
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de"
+    },
+    {
+      "file": "vendor/three-0.180.0/OrbitControls.js",
+      "bytes": 38703,
+      "sha256": "b97879c748170baadeb3fb84cea1ffdf4674e283dc06042f34e2acb95a76042c"
+    },
+    {
+      "file": "vendor/three-0.180.0/loaders/GLTFLoader.js",
+      "bytes": 114739,
+      "sha256": "67ac5551fdafa6e349bd80c8f8e5e39c136d6b2fb1ad647db9abb21dc86f9e4a"
+    },
+    {
+      "file": "vendor/three-0.180.0/utils/BufferGeometryUtils.js",
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    {
+      "file": "vendor/three-0.180.0/LICENSE",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "file": "data/plans/v2-1-reference-reconstruction.json",
+      "bytes": 31182,
+      "sha256": "1a7b376af9cc20824ef5d7c3338cbe59c2bab3e8017b22f1fc672697e522e888"
+    },
+    {
+      "file": "data/plans/v2-2-frontage-route-correction.json",
+      "bytes": 37340,
+      "sha256": "9f854e6a801c2a82be3c22dadf8b1d8cf8fca0f51831b6cf7d56aa3c3bb2b732"
+    },
+    {
+      "file": "data/plans/v2-3-front-gate-compact-site.json",
+      "bytes": 43303,
+      "sha256": "fdbac5f7c322c1610a7c236066ef96494d66041b3e2a18c4e34ba64bfe2fe73d"
+    },
+    {
+      "file": "data/plans/v2-4-lower-carport-frontage.json",
+      "bytes": 48853,
+      "sha256": "473d173d3f07d55e8f2d5f4ff03a38aeffa32143a4d49528ba9ddecc0f12d98c"
+    },
+    {
+      "file": "data/plans/v2-5-utility-stair-rear-access.json",
+      "bytes": 52790,
+      "sha256": "7c0ec1081a33016878b3fc06597fad4c8fe627d6acb8b670a769cc09c0f62e91"
+    },
+    {
+      "file": "data/plans/v2-6-kitchen-laundry-circulation.json",
+      "bytes": 68557,
+      "sha256": "9b3bfd5dd55462eb53d2ff03ce0205130eef614dfdd9bc2555cb537970251ead"
+    },
+    {
+      "file": "data/plans/v2-7-open-living-utility-hall.json",
+      "bytes": 68352,
+      "sha256": "7a67a8a594d15044c056b7bb12893a76dedf6a997fb36f7d7c66679043cba4c3"
+    },
+    {
+      "file": "data/plans/v2-8-practical-optimization.json",
+      "bytes": 70919,
+      "sha256": "9b5fcbcb2bef451a707e12fcd14f7d921a55b733ba45f6e54da375f67c127b1f"
+    },
+    {
+      "file": "data/plans/v2-9-furniture-clearance-balance.json",
+      "bytes": 70896,
+      "sha256": "1bffb30b54644ab37a2f5358fc4a6c71ca18182145989cf5cccba86cab4e7d70"
+    },
+    {
+      "file": "assets/starter-pack-r01/models/cars/Textures/colormap.png",
+      "bytes": 12371,
+      "sha256": "f3622a03a20c6696065cae9cbe391351be873508af190c2ebd1d420c055787a5"
+    },
+    {
+      "file": "assets/starter-pack-r01/models/cars/hatchback-sports.glb",
+      "bytes": 197804,
+      "sha256": "bd5c9d4c3b4bdd254a66b8426563a68b1487ae7a5076df3a2488e6ffed7be64f"
+    },
+    {
+      "file": "assets/starter-pack-r01/models/furniture/pottedPlant.glb",
+      "bytes": 7576,
+      "sha256": "5b760eda2766f75fda36b2c5df652a1662f82981ef64cd8fa7fe7bcd386b3a15"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/stone_pavers/stone_pavers_diff_1k.jpg",
+      "bytes": 772390,
+      "sha256": "1e13349b9b6f956ba6ec8bf5443addde1ad31813879bf646918e7943684bba25"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/stone_pavers/stone_pavers_nor_gl_1k.jpg",
+      "bytes": 910668,
+      "sha256": "b06868bf171c9ffdaee50d08ee65ce8b36cb660ea772d711095a47890ee81deb"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/stone_pavers/stone_pavers_rough_1k.jpg",
+      "bytes": 425066,
+      "sha256": "801a4bb6878e9584c3b56fc7eb06c4ba96a424b642560832868cc244d8724528"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/white_stucco/white_stucco_diff_1k.jpg",
+      "bytes": 557550,
+      "sha256": "5f2d11f5675ffe679155d8e38ed8eaa9b9972126675641e4977c8a4f905f276b"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/white_stucco/white_stucco_nor_gl_1k.jpg",
+      "bytes": 932038,
+      "sha256": "f0d4f34b30093ceca5e58d5168fc06c2f0cd0b81289708aa3eac7d0801bd069d"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/white_stucco/white_stucco_rough_1k.jpg",
+      "bytes": 347861,
+      "sha256": "04866e5a27a96148a744c526babad0abc27fe8c1b4c0c7edae65583d1ed6afb1"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/rustic_stone_wall/rustic_stone_wall_diff_1k.jpg",
+      "bytes": 849830,
+      "sha256": "6e9ab9ab9a406f9d47efcf9224d09f06b3b22e88053d8eb6d0e8a78cf4ec66d9"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/rustic_stone_wall/rustic_stone_wall_nor_gl_1k.jpg",
+      "bytes": 1206685,
+      "sha256": "c5af47086405e28c6979a88b23b46533d6eec33323560ed4dcabfe3bed50cf41"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/rustic_stone_wall/rustic_stone_wall_rough_1k.jpg",
+      "bytes": 600543,
+      "sha256": "ccad2bc01491ef275fdfe2496f1a1da15612ce2746e42c12b92f298bad3bfc8d"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/natural_walnut_veneer/natural_walnut_veneer_diff_1k.jpg",
+      "bytes": 633330,
+      "sha256": "41fe45f6457bddd4d97627bc610d2980d91683bc521c9692a6c4f2a6a3b05efd"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/natural_walnut_veneer/natural_walnut_veneer_nor_gl_1k.jpg",
+      "bytes": 441987,
+      "sha256": "da621d3c7e96740313b459a034a30f46271d91a9dcad0c0c657a1485e32d336b"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/natural_walnut_veneer/natural_walnut_veneer_rough_1k.jpg",
+      "bytes": 568696,
+      "sha256": "a5c7353aa7886a383b04506145548f9d2ffb9753c3d0b6cf52d972c18e5578d9"
+    },
+    {
+      "file": "assets/starter-pack-r01/licenses/kenney-cars-License.txt",
+      "bytes": 696,
+      "sha256": "c33b7f6453d134deae7b1b8493717d9ccfa754c25ab97f6de89b88f8fda19b00"
+    },
+    {
+      "file": "assets/starter-pack-r01/licenses/kenney-furniture-License.txt",
+      "bytes": 614,
+      "sha256": "bc0de1a0742cb490f9ed4bae0bd284286ebb27e23149b9917c7d8c0d590b8b29"
+    },
+    {
+      "file": "ASSET_CREDITS.json",
+      "bytes": 3306,
+      "sha256": "107ea3daab077b35db8810516da787efcf5819e026d7ce3e63f1b11edefe02b5"
+    },
+    {
+      "file": "versions.json",
+      "bytes": 1309,
+      "sha256": "1dce296f09c5b9cc35f529746a2300d3246807d6513340f1469d1d9d522b24de"
+    },
+    {
+      "file": "index.html",
+      "bytes": 3949,
+      "sha256": "06399042e68daf6d33937fb536400f431e10791a9cb790d28c7df3d2b70a92c2"
+    },
+    {
+      "file": "public.css",
+      "bytes": 640,
+      "sha256": "d23d3eeefbcca232664991e5ae9e5b76325fb33be8ca824691d387e6ef1b4b68"
+    },
+    {
+      "file": "public-versions.js",
+      "bytes": 1020,
+      "sha256": "af01e64e3df4558c45a6231dd76bc1774a6b026460ec67c316d2755450cc5953"
+    },
+    {
+      "file": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "README.md",
+      "bytes": 201,
+      "sha256": "70744b735ed6545afcb079c91f7d0e61ce2e417e78f97d908be7c78264d6b263"
+    }
+  ]
+}

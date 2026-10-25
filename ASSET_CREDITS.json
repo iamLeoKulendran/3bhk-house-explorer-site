@@ -1,0 +1,90 @@
+{
+  "three": "Three.js 0.180.0 — MIT; notice in vendor/three-0.180.0/LICENSE",
+  "assets": [
+    {
+      "file": "assets/starter-pack-r01/models/cars/Textures/colormap.png",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/car-kit"
+    },
+    {
+      "file": "assets/starter-pack-r01/models/cars/hatchback-sports.glb",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/car-kit"
+    },
+    {
+      "file": "assets/starter-pack-r01/models/furniture/pottedPlant.glb",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/furniture-kit"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/stone_pavers/stone_pavers_diff_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/stone_pavers"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/stone_pavers/stone_pavers_nor_gl_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/stone_pavers"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/stone_pavers/stone_pavers_rough_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/stone_pavers"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/white_stucco/white_stucco_diff_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/white_stucco"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/white_stucco/white_stucco_nor_gl_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/white_stucco"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/white_stucco/white_stucco_rough_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/white_stucco"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/rustic_stone_wall/rustic_stone_wall_diff_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/rustic_stone_wall"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/rustic_stone_wall/rustic_stone_wall_nor_gl_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/rustic_stone_wall"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/rustic_stone_wall/rustic_stone_wall_rough_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/rustic_stone_wall"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/natural_walnut_veneer/natural_walnut_veneer_diff_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/natural_walnut_veneer"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/natural_walnut_veneer/natural_walnut_veneer_nor_gl_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/natural_walnut_veneer"
+    },
+    {
+      "file": "assets/starter-pack-r01/materials/natural_walnut_veneer/natural_walnut_veneer_rough_1k.jpg",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/natural_walnut_veneer"
+    },
+    {
+      "file": "assets/starter-pack-r01/licenses/kenney-cars-License.txt",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/car-kit"
+    },
+    {
+      "file": "assets/starter-pack-r01/licenses/kenney-furniture-License.txt",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/furniture-kit"
+    }
+  ]
+}

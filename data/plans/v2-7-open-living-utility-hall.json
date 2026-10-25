@@ -1,0 +1,2683 @@
+{
+  "schema": "house-plan/2",
+  "id": "v2-7-open-living-utility-hall",
+  "planFamily": "V2",
+  "revision": "V2.7",
+  "dimensions": "Provisional visualization assumptions in metres. Not measured, not surveyed, not a buildable footprint, a contractor area or a property boundary.",
+  "units": "m",
+  "axes": "x runs along the road, left to right as seen from the road; y runs into the site from the symbolic frontage line (y = 0, rear = larger y); levels are metres above an ASSUMED road datum. North and the real boundaries are unknown.",
+  "parameters": {
+    "exteriorWallThickness": 0.23,
+    "interiorWallThickness": 0.115,
+    "minimumNib": 0.15,
+    "wallHeight": 3,
+    "doorHeadHeight": 2.1,
+    "cutawayHeight": 1.2,
+    "plinthHeight": 0.45,
+    "roofSlabThickness": 0.2,
+    "parapetHeight": 0.4,
+    "roadDepthShown": 6.3,
+    "landMarginShown": 2,
+    "vehicleEnvelope": {
+      "length": 4.5,
+      "width": 1.85,
+      "height": 1.65
+    },
+    "carModel": {
+      "file": "assets/starter-pack-r01/models/cars/hatchback-sports.glb",
+      "fitInsideEnvelope": true,
+      "frontAxis": "+z",
+      "facing": "road"
+    },
+    "plantModel": {
+      "file": "assets/starter-pack-r01/models/furniture/pottedPlant.glb"
+    },
+    "materials": {
+      "paving": {
+        "dir": "assets/starter-pack-r01/materials/stone_pavers",
+        "name": "stone_pavers",
+        "tileMetres": 1.5
+      },
+      "stucco": {
+        "dir": "assets/starter-pack-r01/materials/white_stucco",
+        "name": "white_stucco",
+        "tileMetres": 2
+      },
+      "stone": {
+        "dir": "assets/starter-pack-r01/materials/rustic_stone_wall",
+        "name": "rustic_stone_wall",
+        "tileMetres": 1.6
+      },
+      "wood": {
+        "dir": "assets/starter-pack-r01/materials/natural_walnut_veneer",
+        "name": "natural_walnut_veneer",
+        "tileMetres": 1.2
+      }
+    },
+    "doorLeaf": {
+      "thickness": 0.04,
+      "gap": 0.004,
+      "trim": 0.07,
+      "proud": 0.015
+    }
+  },
+  "parameterEvidence": {
+    "exteriorWallThickness": "ASSUMED — walls are centred on their drawn centrelines",
+    "interiorWallThickness": "ASSUMED — walls are centred on their drawn centrelines",
+    "minimumNib": "ASSUMED — least wall left beside an opening",
+    "wallHeight": "ASSUMED — above finished floor",
+    "doorHeadHeight": "ASSUMED",
+    "cutawayHeight": "ASSUMED — cutaway section height above finished floor",
+    "plinthHeight": "ASSUMED — finished floor above land level, kept separate from land",
+    "roofSlabThickness": "ASSUMED — flat-roof appearance only, not a structural or waterproofing design",
+    "parapetHeight": "ASSUMED",
+    "roadDepthShown": "ASSUMED display width, not a measured road",
+    "landMarginShown": "ASSUMED display margin",
+    "vehicleEnvelope": "ASSUMED generic envelope; not the owner's Ford Focus or the intended Honda Vezel (Q03)",
+    "carModel": "Local CC0 Kenney hatchback scaled uniformly inside the envelope; appearance only",
+    "materials": "Local CC0 Poly Haven maps; appearance only",
+    "doorLeaf": "ASSUMED door leaf 40 mm thick with a 4 mm gap, architrave trim 70 mm wide standing 15 mm proud of each wall face, entirely outside the clear opening (the clear opening is the wall cut; with the leaf open at 90° the passage is the opening less 40 mm). Appearance and checking only; no door specification."
+  },
+  "levels": {
+    "road": {
+      "value": 0,
+      "evidence": "ASSUMED reference datum at the frontage"
+    },
+    "land": {
+      "default": 1.75,
+      "min": 1.5,
+      "max": 2,
+      "evidence": "OWNER-ESTIMATED road-to-land rise 1.5–2.0 m; not surveyed"
+    },
+    "apronAboveRoad": {
+      "value": 0.1,
+      "evidence": "ASSUMED level crossing over the roadside drain"
+    },
+    "yardAboveLand": {
+      "value": 0,
+      "evidence": "ASSUMED front garden at land level"
+    },
+    "finishedFloor": {
+      "rule": "land + plinthHeight",
+      "evidence": "ASSUMED — separate from land level"
+    },
+    "carportFloor": {
+      "active": "B",
+      "evidence": "Independent ASSUMED carport-floor parameter, separate from the garden (land) and the house finished floor. Two alternatives are compared; the active one drives the plan, the sections, the 3D scene and the checks.",
+      "options": [
+        {
+          "id": "A",
+          "label": "A · V2.3 level",
+          "reference": "land",
+          "offset": 0.1,
+          "evidence": "The V2.3 value: carport floor = land + 0.10 m (ASSUMED)."
+        },
+        {
+          "id": "B",
+          "label": "B · lower carport (candidate)",
+          "reference": "road",
+          "offset": 1.2,
+          "evidence": "ASSUMED candidate level +1.20 m above the road datum (adjustable). Chosen so the climb is about 12% average / 15% steepest instead of 19% / 23% at land +1.75, and so the carport stays below the garden at every land level (0.30 / 0.55 / 0.80 m)."
+        }
+      ]
+    }
+  },
+  "site": {
+    "evidence": "ASSUMED display extent only. Boundaries, frontage and depth are unverified; the owner's report of ample space is not a measurement.",
+    "display": {
+      "x0": -1.4,
+      "x1": 19,
+      "y0": -8.1,
+      "y1": 21.2
+    },
+    "frontageY": 0,
+    "road": {
+      "y0": -8.1,
+      "y1": -1.8
+    },
+    "terrain": {
+      "x0": 0,
+      "x1": 17.3,
+      "y0": 0.125,
+      "y1": 19.3,
+      "evidence": "The conceptual raised site is modelled only inside the symbolic boundary walls (to their centrelines, so the walls hide its edges). Nothing outside them is raised."
+    },
+    "background": {
+      "margin": 30,
+      "evidence": "DISPLAY BACKGROUND ONLY: flat ground at the road datum around the conceptual site, kept separate from it. Neighbouring ground levels, buildings and boundaries are unknown and are not modelled."
+    },
+    "leftWall": {
+      "x0": -0.115,
+      "x1": 0.115,
+      "y0": 0,
+      "y1": 10,
+      "topAboveYard": 0.9,
+      "evidence": "ASSUMED symbolic boundary wall beside the driveway; neighbouring ground level unknown."
+    },
+    "leftRearWall": {
+      "x0": -0.115,
+      "x1": 0.115,
+      "y0": 18.2,
+      "y1": 19.3,
+      "topAboveYard": 0.9,
+      "evidence": "ASSUMED symbolic boundary between the utility wall and the rear wall."
+    },
+    "rightWall": {
+      "x0": 17.185,
+      "x1": 17.415,
+      "y0": 0,
+      "y1": 19.3,
+      "topAboveYard": 0.9,
+      "evidence": "ASSUMED symbolic boundary of the CONCEPTUAL envelope, not a legal line."
+    },
+    "rearWall": {
+      "y": 19.3,
+      "x0": -0.115,
+      "x1": 17.415,
+      "topAboveYard": 1.8,
+      "evidence": "ASSUMED symbolic boundary of the CONCEPTUAL envelope, not a legal line."
+    },
+    "landShape": {
+      "descriptor": "almost square",
+      "evidence": "OWNER-ESTIMATED (owner description, 2026-10-22). Boundaries, frontage, dimensions and orientation are UNKNOWN; no dimension is derived from this description or from the 20-perch estimate.",
+      "dimensionsKnown": false
+    },
+    "display_evidence": "DISPLAY BOUNDS ONLY: how much ground the viewer and plan draw. Not the parcel and not the planning envelope.",
+    "conceptualEnvelope": {
+      "x0": -0.115,
+      "x1": 17.415,
+      "y0": 0,
+      "y1": 19.415,
+      "evidence": "CONCEPTUAL near-square planning envelope: the outer faces of the symbolic boundary walls and the front face of the main wall. An ASSUMED composition frame so the compact trial can be drawn; it is NOT surveyed, NOT derived from the 20-perch estimate and NOT the parcel.",
+      "derivedFromArea": false,
+      "claims": {
+        "siteFit": false,
+        "setbacks": false,
+        "boundaries": false
+      },
+      "nearSquareMaxAspect": 1.15
+    }
+  },
+  "frontage": {
+    "evidence": "Separate PROVISIONAL frontage components from the road inward: road edge, open roadside drain, raised retaining edge with the lower planting strip behind it (the planting edge meets the rear side of the drain), stone-base white main wall, raised garden. No verge band. Every position and size is ASSUMED; ownership of everything in front of the main wall is UNKNOWN (it may be road reserve).",
+    "roadEdge": {
+      "y": -1.8,
+      "evidence": "ASSUMED edge of the carriageway; not measured"
+    },
+    "drain": {
+      "y0": -1.8,
+      "y1": -1.2,
+      "depth": 0.6,
+      "flow": "along the road; direction unknown",
+      "evidence": "ASSUMED open roadside drain beside the road edge (the Street View shows an open drain). Its size, depth, falls and capacity are unknown. Both crossings leave the channel open beneath them; nothing is placed inside it."
+    },
+    "plantingStrip": {
+      "x0": 6.3,
+      "x1": 17.3,
+      "y0": -1.2,
+      "y1": 0,
+      "ownership": "UNKNOWN — may be road reserve",
+      "evidence": "ASSUMED lower planting strip behind the retaining edge, in front of the main wall. Its soil surface level is derived from the retaining edge (toe + visible face − soil drop). Planting placeholders only; interrupted by the driveway and the pedestrian route; never inside the drain. Not assumed to belong to the owner; not counted as garden."
+    },
+    "mainWall": {
+      "x0": 6.3,
+      "x1": 17.3,
+      "y0": 0,
+      "y1": 0.25,
+      "stoneAboveStrip": 1,
+      "topAboveGarden": 0.9,
+      "evidence": "ASSUMED main frontage wall: stone-look base rising from the planting soil, white render above. It retains the raised garden (0.50–1.00 m above the soil across the land range); retaining design by qualified professionals is required."
+    },
+    "raisedGarden": {
+      "evidence": "Front garden at land level behind the main wall (OWNER-ESTIMATED 1.5–2.0 m above the road)."
+    },
+    "retainingEdge": {
+      "x0": 6.3,
+      "x1": 17.3,
+      "y0": -1.2,
+      "thickness": 0.2,
+      "toeAboveRoad": 0.1,
+      "visibleFace": 1,
+      "soilBelowCap": 0.1,
+      "faceEvidence": "OWNER-ESTIMATED — TO BE VERIFIED. CONFIRMED owner clarification (2026-10-22): the approximately 1 m is the VISIBLE retaining-face height, measured from the adjoining drain-side ground at its toe to the top of the retaining edge / capping.",
+      "toeEvidence": "ASSUMED: the adjoining drain-side ground (drain rear lip, crossing and bottom landing) is +0.10 m above the road datum.",
+      "soilEvidence": "ASSUMED: planting soil surface 0.10 m below the top of the capping (kept separate from the capping).",
+      "evidence": "ASSUMED raised retaining edge in front of the lower planting strip, as in the owner feedback image (a stone/laterite-look face directly behind the drain with planting above) and REF-AERIAL/REF-PLAN. Conceptual appearance only: no structure, foundation, reinforcement or drainage detail is specified."
+    }
+  },
+  "driveway": {
+    "evidence": "ASSUMED open driveway rising from the road to the carport. The 9.0 m climb (y 1.0 to 10.0) is unchanged from V2.1–V2.3; its rise depends on the active carport option. The gate stands on the level apron at its start. The right retaining wall stops at y 8.72 where the carport-to-garden stair passes.",
+    "x0": 0.115,
+    "x1": 3.95,
+    "apronY0": -1.8,
+    "rampStartY": 1,
+    "bottomTransition": 1.5,
+    "topTransition": 1.5,
+    "crossingThickness": 0.1,
+    "rightRetainingWall": {
+      "x0": 3.95,
+      "x1": 4.2,
+      "y0": -1.2,
+      "topAboveYard": 0.9,
+      "lowTopAboveStrip": 0.05,
+      "y1": 8.72
+    }
+  },
+  "carport": {
+    "id": "carport",
+    "label": "Carport (covered; level depends on the active option)",
+    "x0": 0,
+    "x1": 3.7,
+    "y0": 10,
+    "y1": 15.6,
+    "roofThickness": 0.25,
+    "roofFrontOverhang": 0.4,
+    "evidence": "ASSUMED: integrated covered carport on the left of the house. Position, footprint and 5.60 m depth unchanged from V2.3. The canopy roof level is RETAINED in both options (underside land + 2.80 m, as in V2.3: 2.70 m above carport A); in B the clear height above the lower floor is larger (headroom reported). The roof is carried by its own columns, separate from the gate piers.",
+    "columns": [
+      {
+        "id": "col-L",
+        "x0": 0.115,
+        "x1": 0.495,
+        "y0": 9.8,
+        "y1": 10.18
+      },
+      {
+        "id": "col-R",
+        "x0": 3.585,
+        "x1": 3.815,
+        "y0": 9.62,
+        "y1": 9.885
+      }
+    ],
+    "columnsEvidence": "ASSUMED roof columns (visual only: no structural design). Independent of the gate piers. The right column stands against the end of the house wall so the carport walking route can pass it.",
+    "roofUndersideAboveLand": 2.8,
+    "minClearHeight": 2.4,
+    "flags": []
+  },
+  "gate": {
+    "alignedTo": "mainWall",
+    "evidence": "Position and type PROVISIONAL. The gate stands on the main front-wall line at the foot of the driveway. Its base is derived from the driveway surface at that line, not from the raised garden or the carport floor. With the verge removed only 1.00 m of apron lies inside the wall line. Opening, leaf, ground clearance and the required space of each operating option are computed from this data; none is declared workable.",
+    "y": 0.125,
+    "x0": 0.4,
+    "x1": 3.35,
+    "height": 1.6,
+    "leafThickness": 0.08,
+    "bottomClearance": 0.05,
+    "leafOverlap": 0.3,
+    "base": "driveway",
+    "waitingGap": 0.3,
+    "pierLeft": {
+      "id": "gate-pier-L",
+      "x0": -0.115,
+      "x1": 0.4,
+      "y0": 0,
+      "y1": 0.3,
+      "height": 2
+    },
+    "pierRight": {
+      "id": "gate-pier-R",
+      "x0": 3.35,
+      "x1": 3.95,
+      "y0": 0,
+      "y1": 0.3,
+      "height": 2
+    },
+    "options": [
+      {
+        "id": "slide-right",
+        "label": "Sliding leaf, pocket to the right",
+        "type": "sliding",
+        "pocket": "right"
+      },
+      {
+        "id": "slide-left",
+        "label": "Sliding leaf, pocket to the left",
+        "type": "sliding",
+        "pocket": "left"
+      },
+      {
+        "id": "swing-in",
+        "label": "Double swing leaves, opening inward",
+        "type": "swing",
+        "direction": "inward"
+      },
+      {
+        "id": "swing-out",
+        "label": "Double swing leaves, opening outward",
+        "type": "swing",
+        "direction": "outward"
+      }
+    ],
+    "verdict": "NOT DEMONSTRATED — required spaces and conflicts are shown; no operating option is declared workable",
+    "flags": [
+      "waiting:road-encroachment",
+      "waiting:drain",
+      "slide-right:pedestrian-route",
+      "slide-right:walls",
+      "slide-left:boundary",
+      "swing-out:drain",
+      "swing-out:waiting-car"
+    ],
+    "flagsEvidence": "Every conflict computed by geometry-v2.js gateStudy() at land 1.50 / 1.75 / 2.00 must be flagged here, or the checks fail."
+  },
+  "steps": {
+    "x0": 4.45,
+    "x1": 6.05,
+    "y0": -0.2,
+    "going": 0.3,
+    "maxRiser": 0.17,
+    "sideWall": 0.25,
+    "guardAboveTread": 0.9,
+    "pierHeight": 1.2,
+    "evidence": "ASSUMED straight flight beside the ramp as in REF-FRONT, rising from the bottom landing (y −1.20…−0.20, level with the drain-side ground) to the garden. The riser count follows the land level (risers of at most maxRiser); the flight end, the upper landing and the start of the garden path are derived from it. No stair-compliance, handrail, lighting or step-free check."
+  },
+  "route": {
+    "evidence": "One connected pedestrian route from the road: crossing → bottom landing → flight → upper landing → garden path → porch steps → porch landing → entrance. Only the crossing level, landing depths, path turning points and widths are data; every join is derived from the flight and the porch steps and checked by tools/check-v2.mjs at land 1.50, 1.75 and 2.00 m and at each riser-count change point.",
+    "clearWidthMin": 1.2,
+    "crossing": {
+      "aboveRoad": 0.1,
+      "thickness": 0.1,
+      "evidence": "SCHEMATIC slab over the open drain at the flight's width; span, supports, capacity, levels and authority permission are NOT designed."
+    },
+    "bottomLanding": {
+      "aboveRoad": 0.1,
+      "minDepth": 0.9,
+      "evidence": "ASSUMED landing between the crossing and the first riser, flush with the drain-side ground (toe level); with the verge removed it is cut into the strip zone and enclosed by the flight side walls. On land of unknown ownership."
+    },
+    "upperLanding": {
+      "depth": 1.2,
+      "minDepth": 1.2,
+      "evidence": "ASSUMED level landing at garden level at the top of the flight; an optional pedestrian gate would sit here (REF-AERIAL/REF-PLAN/REF-FRONT-2 show one; REF-FRONT does not)."
+    },
+    "path": {
+      "width": 1.2,
+      "via": [
+        [
+          5.25,
+          5
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "evidence": "ASSUMED garden path. It starts at the far edge of the upper landing and ends at the foot of the porch steps (both derived); only the two turning points are data. Level with the garden."
+    },
+    "piers": [
+      {
+        "id": "pier-L",
+        "x0": 3.95,
+        "x1": 4.45,
+        "y0": -0.05,
+        "y1": 0.45
+      },
+      {
+        "id": "pier-R",
+        "x0": 6.05,
+        "x1": 6.55,
+        "y0": -0.05,
+        "y1": 0.45
+      }
+    ],
+    "porch": "porch",
+    "entrance": "D-ENT"
+  },
+  "garden": {
+    "evidence": "ASSUMED planting placeholders only, not a planting design; existing trees and overhead services are unknown. The compact V2.3 garden is kept (not larger); lawn 2 starts 1.10 m farther in because the street-route flight reaches farther into the garden. Beds, shrubs, palms, trees and pots are kept off both walking routes (checked).",
+    "lawns": [
+      {
+        "x0": 6.3,
+        "y0": 1.5,
+        "x1": 16.95,
+        "y1": 6.3
+      },
+      {
+        "x0": 4.2,
+        "y0": 4.4,
+        "x1": 6.3,
+        "y1": 5.6
+      }
+    ],
+    "beds": [
+      {
+        "x0": 6.45,
+        "y0": 0.35,
+        "x1": 16.95,
+        "y1": 1.35
+      },
+      {
+        "x0": 4.6,
+        "y0": 5.9,
+        "x1": 7.8,
+        "y1": 6.7
+      },
+      {
+        "x0": 11.4,
+        "y0": 6.2,
+        "x1": 16,
+        "y1": 7.2
+      }
+    ],
+    "palms": [
+      {
+        "x": 7.3,
+        "y": 3,
+        "height": 3.4
+      },
+      {
+        "x": 12.3,
+        "y": 4.6,
+        "height": 3.8
+      }
+    ],
+    "trees": [
+      {
+        "x": 15.8,
+        "y": 5.4,
+        "height": 4.4,
+        "crown": 1.7,
+        "flowering": true
+      }
+    ],
+    "pots": [
+      {
+        "x": 10.85,
+        "y": 7.7,
+        "r": 0.25
+      },
+      {
+        "x": 10.85,
+        "y": 9.5,
+        "r": 0.25
+      }
+    ]
+  },
+  "rooms": [
+    {
+      "id": "living",
+      "label": "Living (open to the entry)",
+      "zone": "social",
+      "labelAt": [
+        5.6,
+        10.45
+      ],
+      "cells": [
+        [
+          3.7,
+          10,
+          8,
+          13
+        ]
+      ]
+    },
+    {
+      "id": "kitchen",
+      "label": "Kitchen",
+      "zone": "service",
+      "labelAt": [
+        6.2,
+        16.95
+      ],
+      "cells": [
+        [
+          5.1,
+          15.2,
+          8,
+          18.2
+        ]
+      ]
+    },
+    {
+      "id": "dining",
+      "label": "Dining",
+      "zone": "social",
+      "labelAt": [
+        4.6,
+        14.2
+      ],
+      "cells": [
+        [
+          3.7,
+          13,
+          8,
+          15.2
+        ],
+        [
+          3.7,
+          15.2,
+          5.1,
+          15.5
+        ]
+      ]
+    },
+    {
+      "id": "utility",
+      "label": "Utility hall (stair + laundry)",
+      "zone": "service",
+      "labelAt": [
+        1.85,
+        16.85
+      ],
+      "cells": [
+        [
+          0,
+          15.6,
+          3.7,
+          18.2
+        ],
+        [
+          3.7,
+          15.5,
+          5.1,
+          18.2
+        ]
+      ]
+    },
+    {
+      "id": "serviceYard",
+      "label": "Rear service yard (laundry)",
+      "zone": "outdoor",
+      "enclosed": false,
+      "labelAt": [
+        1.6,
+        19.68
+      ],
+      "cells": [
+        [
+          0,
+          18.2,
+          3.7,
+          19.3
+        ]
+      ]
+    },
+    {
+      "id": "hall",
+      "label": "Hall / circulation",
+      "zone": "circulation",
+      "labelAt": [
+        10.3,
+        13.75
+      ],
+      "cells": [
+        [
+          8,
+          10,
+          9.3,
+          12.9
+        ],
+        [
+          8,
+          12.9,
+          13.5,
+          14.6
+        ]
+      ]
+    },
+    {
+      "id": "stair",
+      "label": "Reading / study corner (former stair reserve)",
+      "zone": "circulation",
+      "labelAt": [
+        9.95,
+        11.85
+      ],
+      "cells": [
+        [
+          9.3,
+          10,
+          11.2,
+          12.9
+        ]
+      ]
+    },
+    {
+      "id": "bed3",
+      "label": "Bedroom 3",
+      "zone": "private",
+      "labelAt": [
+        9.95,
+        15.6
+      ],
+      "cells": [
+        [
+          8,
+          14.6,
+          11.9,
+          18.2
+        ]
+      ]
+    },
+    {
+      "id": "bed2",
+      "label": "Bedroom 2",
+      "zone": "private",
+      "labelAt": [
+        14,
+        15.6
+      ],
+      "cells": [
+        [
+          11.9,
+          14.6,
+          16.1,
+          18.2
+        ]
+      ]
+    },
+    {
+      "id": "master",
+      "label": "Master bedroom",
+      "zone": "private",
+      "labelAt": [
+        12.65,
+        11.7
+      ],
+      "cells": [
+        [
+          11.2,
+          8.3,
+          14.5,
+          12.9
+        ],
+        [
+          14.5,
+          8.3,
+          16.1,
+          9.9
+        ]
+      ]
+    },
+    {
+      "id": "ensuite",
+      "label": "Ensuite",
+      "zone": "wet",
+      "labelAt": [
+        15.05,
+        11.75
+      ],
+      "cells": [
+        [
+          14.5,
+          9.9,
+          16.1,
+          12.9
+        ]
+      ]
+    },
+    {
+      "id": "bath",
+      "label": "Common bathroom",
+      "zone": "wet",
+      "labelAt": [
+        14.3,
+        13.45
+      ],
+      "cells": [
+        [
+          13.5,
+          12.9,
+          16.1,
+          14.6
+        ]
+      ]
+    },
+    {
+      "id": "porch",
+      "label": "Entry porch (covered)",
+      "zone": "outdoor",
+      "labelAt": [
+        9.6,
+        8.9
+      ],
+      "enclosed": false,
+      "cells": [
+        [
+          8,
+          7.4,
+          11.2,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "carport",
+      "label": "Carport",
+      "zone": "outdoor",
+      "labelAt": [
+        1.85,
+        14.55
+      ],
+      "enclosed": false,
+      "cells": [
+        [
+          0,
+          10,
+          3.7,
+          15.6
+        ]
+      ]
+    }
+  ],
+  "walls": [
+    {
+      "id": "W-CP-L",
+      "dir": "v",
+      "at": 0,
+      "from": 10,
+      "to": 15.6,
+      "kind": "exterior",
+      "belongsTo": "carport",
+      "note": "Carport left wall (symbolic boundary)",
+      "skirtToGround": true
+    },
+    {
+      "id": "W-UT-L",
+      "dir": "v",
+      "at": 0,
+      "from": 15.6,
+      "to": 18.2,
+      "kind": "exterior",
+      "note": "Utility left wall (symbolic boundary)"
+    },
+    {
+      "id": "W-REAR",
+      "dir": "h",
+      "at": 18.2,
+      "from": 0,
+      "to": 16.1,
+      "kind": "exterior"
+    },
+    {
+      "id": "W-EAST",
+      "dir": "v",
+      "at": 16.1,
+      "from": 8.3,
+      "to": 18.2,
+      "kind": "exterior"
+    },
+    {
+      "id": "W-MASTER-F",
+      "dir": "h",
+      "at": 8.3,
+      "from": 11.2,
+      "to": 16.1,
+      "kind": "exterior"
+    },
+    {
+      "id": "W-FRONT-A",
+      "dir": "h",
+      "at": 10,
+      "from": 3.7,
+      "to": 11.2,
+      "kind": "exterior"
+    },
+    {
+      "id": "W-PORCH-E",
+      "dir": "v",
+      "at": 11.2,
+      "from": 8.3,
+      "to": 10,
+      "kind": "exterior",
+      "note": "Master bedroom west wall beside the porch"
+    },
+    {
+      "id": "W-CP-R2",
+      "dir": "v",
+      "at": 3.7,
+      "from": 10,
+      "to": 15.6,
+      "kind": "exterior",
+      "note": "Wall between the carport and the living room / kitchen (carport side)",
+      "skirtToCarport": true
+    },
+    {
+      "id": "W-CP-REAR",
+      "dir": "h",
+      "at": 15.6,
+      "from": 0,
+      "to": 3.7,
+      "kind": "exterior",
+      "skirtToCarport": true
+    },
+    {
+      "id": "W-UK",
+      "dir": "v",
+      "at": 5.1,
+      "from": 15.5,
+      "to": 18.2,
+      "kind": "interior",
+      "note": "Utility hall / kitchen wall (moved 1.40 m east from x 3.70)"
+    },
+    {
+      "id": "W-BED3-W",
+      "dir": "v",
+      "at": 8,
+      "from": 14.6,
+      "to": 18.2,
+      "kind": "interior"
+    },
+    {
+      "id": "W-HALL-M",
+      "dir": "v",
+      "at": 11.2,
+      "from": 10,
+      "to": 12.9,
+      "kind": "interior"
+    },
+    {
+      "id": "W-MASTER-N",
+      "dir": "h",
+      "at": 12.9,
+      "from": 11.2,
+      "to": 16.1,
+      "kind": "interior"
+    },
+    {
+      "id": "W-CORR-N",
+      "dir": "h",
+      "at": 14.6,
+      "from": 8,
+      "to": 16.1,
+      "kind": "interior"
+    },
+    {
+      "id": "W-BEDS",
+      "dir": "v",
+      "at": 11.9,
+      "from": 14.6,
+      "to": 18.2,
+      "kind": "interior"
+    },
+    {
+      "id": "W-BATH-W",
+      "dir": "v",
+      "at": 13.5,
+      "from": 12.9,
+      "to": 14.6,
+      "kind": "interior"
+    },
+    {
+      "id": "W-ENS-W",
+      "dir": "v",
+      "at": 14.5,
+      "from": 9.9,
+      "to": 12.9,
+      "kind": "interior"
+    },
+    {
+      "id": "W-ENS-S",
+      "dir": "h",
+      "at": 9.9,
+      "from": 14.5,
+      "to": 16.1,
+      "kind": "interior"
+    },
+    {
+      "id": "W-UH",
+      "dir": "h",
+      "at": 15.5,
+      "from": 3.7,
+      "to": 5.1,
+      "kind": "interior",
+      "note": "Utility hall / dining wall (new, y 15.50)"
+    }
+  ],
+  "openings": [
+    {
+      "id": "D-ENT",
+      "wall": "W-FRONT-A",
+      "at": 8.7,
+      "width": 0.95,
+      "kind": "entrance-door",
+      "sill": 0,
+      "head": 2.4,
+      "swing": {
+        "hinge": "low",
+        "side": 1
+      },
+      "label": "Entrance door",
+      "finish": "wood"
+    },
+    {
+      "id": "G-LIV-F",
+      "wall": "W-FRONT-A",
+      "at": 5.85,
+      "width": 3,
+      "kind": "glazing",
+      "sill": 0.3,
+      "head": 2.4,
+      "label": "Large glazing (living)",
+      "surround": 0.25
+    },
+    {
+      "id": "W-LIV-W",
+      "wall": "W-CP-R2",
+      "at": 13.9,
+      "width": 1.2,
+      "kind": "window",
+      "sill": 1,
+      "head": 2.2,
+      "label": "Dining side window onto the carport (moved from y 11.90 so the wall can take the TV; privacy to be reviewed)"
+    },
+    {
+      "id": "W-K",
+      "wall": "W-REAR",
+      "at": 4.3,
+      "width": 1,
+      "kind": "window",
+      "sill": 1.05,
+      "head": 2.2,
+      "label": "Laundry window in the utility hall (was the kitchen window)"
+    },
+    {
+      "id": "W-D",
+      "wall": "W-REAR",
+      "at": 6.9,
+      "width": 1.2,
+      "kind": "window",
+      "sill": 1,
+      "head": 2.2,
+      "label": "Kitchen window (was the dining window)"
+    },
+    {
+      "id": "W-U",
+      "wall": "W-REAR",
+      "at": 1.85,
+      "width": 1.2,
+      "kind": "window",
+      "sill": 1.5,
+      "head": 2.2,
+      "label": "Utility window beside the stair (fixed, toughened — guarding TO BE VERIFIED)",
+      "guarding": "fixed-toughened"
+    },
+    {
+      "id": "D-UK",
+      "wall": "W-UK",
+      "at": 16.11,
+      "width": 0.8,
+      "kind": "door",
+      "sill": 0,
+      "head": 2.1,
+      "swing": {
+        "hinge": "low",
+        "side": 1
+      },
+      "label": "Utility hall – kitchen door (moved with the wall, 0.80 m, opens into the kitchen)"
+    },
+    {
+      "id": "D-UC",
+      "wall": "W-CP-REAR",
+      "at": 2.4,
+      "width": 0.8,
+      "kind": "door",
+      "sill": 0,
+      "head": 2.1,
+      "swing": {
+        "hinge": "low",
+        "side": 1
+      },
+      "label": "Carport–utility service door"
+    },
+    {
+      "id": "D-UB",
+      "wall": "W-REAR",
+      "at": 3.15,
+      "width": 0.75,
+      "kind": "door",
+      "sill": 0,
+      "head": 2.1,
+      "swing": {
+        "hinge": "high",
+        "side": 1
+      },
+      "label": "Back door (moved 0.0325 m east to stay at the stair-foot lobby with the 0.90 m half-landing)"
+    },
+    {
+      "id": "D-B3",
+      "wall": "W-CORR-N",
+      "at": 8.75,
+      "width": 0.85,
+      "kind": "door",
+      "sill": 0,
+      "head": 2.1,
+      "swing": {
+        "hinge": "low",
+        "side": 1
+      },
+      "label": "Bedroom 3 door"
+    },
+    {
+      "id": "W-B3",
+      "wall": "W-REAR",
+      "at": 9.95,
+      "width": 1.5,
+      "kind": "window",
+      "sill": 0.95,
+      "head": 2.2,
+      "label": "Bedroom 3 window"
+    },
+    {
+      "id": "D-B2",
+      "wall": "W-CORR-N",
+      "at": 12.6,
+      "width": 0.85,
+      "kind": "door",
+      "sill": 0,
+      "head": 2.1,
+      "swing": {
+        "hinge": "low",
+        "side": 1
+      },
+      "label": "Bedroom 2 door"
+    },
+    {
+      "id": "W-B2",
+      "wall": "W-REAR",
+      "at": 14,
+      "width": 1.8,
+      "kind": "window",
+      "sill": 0.95,
+      "head": 2.2,
+      "label": "Bedroom 2 window"
+    },
+    {
+      "id": "D-CB",
+      "wall": "W-BATH-W",
+      "at": 13.75,
+      "width": 0.8,
+      "kind": "door",
+      "sill": 0,
+      "head": 2.1,
+      "swing": {
+        "hinge": "low",
+        "side": -1
+      },
+      "label": "Common bathroom door (opens outward)"
+    },
+    {
+      "id": "W-CB",
+      "wall": "W-EAST",
+      "at": 13.75,
+      "width": 0.6,
+      "kind": "window",
+      "sill": 1.5,
+      "head": 2.2,
+      "label": "Common bathroom window"
+    },
+    {
+      "id": "D-M",
+      "wall": "W-MASTER-N",
+      "at": 12,
+      "width": 0.9,
+      "kind": "door",
+      "sill": 0,
+      "head": 2.1,
+      "swing": {
+        "hinge": "low",
+        "side": -1
+      },
+      "label": "Master bedroom door"
+    },
+    {
+      "id": "W-M1",
+      "wall": "W-MASTER-F",
+      "at": 12.25,
+      "width": 0.9,
+      "kind": "window",
+      "sill": 0.9,
+      "head": 2.3,
+      "label": "Master window 1"
+    },
+    {
+      "id": "W-M2",
+      "wall": "W-MASTER-F",
+      "at": 13.75,
+      "width": 1.3,
+      "kind": "window",
+      "sill": 0.9,
+      "head": 2.3,
+      "label": "Master window 2"
+    },
+    {
+      "id": "D-E",
+      "wall": "W-ENS-W",
+      "at": 11.45,
+      "width": 0.8,
+      "kind": "door",
+      "sill": 0,
+      "head": 2.1,
+      "swing": {
+        "hinge": "high",
+        "side": -1
+      },
+      "label": "Ensuite door (opens into master)"
+    },
+    {
+      "id": "W-E",
+      "wall": "W-EAST",
+      "at": 11.4,
+      "width": 0.6,
+      "kind": "window",
+      "sill": 1.5,
+      "head": 2.2,
+      "label": "Ensuite window"
+    }
+  ],
+  "furniture": [
+    {
+      "id": "f-media",
+      "room": "living",
+      "type": "storage",
+      "label": "TV / media unit",
+      "x0": 3.83,
+      "y0": 10.95,
+      "x1": 4.28,
+      "y1": 12.55,
+      "height": 0.6,
+      "use": {
+        "zones": [
+          {
+            "side": "+x",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-sofa-a",
+      "room": "living",
+      "type": "sofa",
+      "label": "Sofa",
+      "x0": 6.4,
+      "y0": 10.62,
+      "x1": 7.3,
+      "y1": 12.42,
+      "height": 0.8
+    },
+    {
+      "id": "f-coffee",
+      "room": "living",
+      "type": "table",
+      "label": "",
+      "x0": 4.9,
+      "y0": 11.25,
+      "x1": 5.8,
+      "y1": 12.15,
+      "height": 0.4
+    },
+    {
+      "id": "f-entry",
+      "room": "stair",
+      "type": "storage",
+      "label": "Shoes",
+      "x0": 9.32,
+      "y0": 10.13,
+      "x1": 9.82,
+      "y1": 10.53,
+      "height": 0.9,
+      "use": {
+        "zones": [
+          {
+            "side": "+y",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-b3-bed",
+      "room": "bed3",
+      "type": "bed",
+      "label": "Bed",
+      "x0": 9.3,
+      "y0": 16.08,
+      "x1": 10.9,
+      "y1": 18.08,
+      "height": 0.45,
+      "use": {
+        "zones": [
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "-y"
+          },
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "-x",
+            "span": [
+              0,
+              1.2
+            ]
+          },
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "+x",
+            "span": [
+              0,
+              1.2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-b3-ns1",
+      "room": "bed3",
+      "type": "storage",
+      "label": "",
+      "x0": 8.85,
+      "y0": 17.68,
+      "x1": 9.25,
+      "y1": 18.08,
+      "height": 0.5
+    },
+    {
+      "id": "f-b3-ns2",
+      "room": "bed3",
+      "type": "storage",
+      "label": "",
+      "x0": 11,
+      "y0": 17.68,
+      "x1": 11.4,
+      "y1": 18.08,
+      "height": 0.5
+    },
+    {
+      "id": "f-b3-wd",
+      "room": "bed3",
+      "type": "wardrobe",
+      "label": "Wardrobe",
+      "x0": 8.07,
+      "y0": 15.6,
+      "x1": 8.67,
+      "y1": 17.4,
+      "height": 2.1,
+      "use": {
+        "zones": [
+          {
+            "side": "+x",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-b2-bed",
+      "room": "bed2",
+      "type": "bed",
+      "label": "Bed",
+      "x0": 13.1,
+      "y0": 16.08,
+      "x1": 14.7,
+      "y1": 18.08,
+      "height": 0.45,
+      "use": {
+        "zones": [
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "-y"
+          },
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "-x",
+            "span": [
+              0,
+              1.2
+            ]
+          },
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "+x",
+            "span": [
+              0,
+              1.2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-b2-ns1",
+      "room": "bed2",
+      "type": "storage",
+      "label": "",
+      "x0": 12.65,
+      "y0": 17.68,
+      "x1": 13.05,
+      "y1": 18.08,
+      "height": 0.5
+    },
+    {
+      "id": "f-b2-ns2",
+      "room": "bed2",
+      "type": "storage",
+      "label": "",
+      "x0": 14.75,
+      "y0": 17.68,
+      "x1": 15.15,
+      "y1": 18.08,
+      "height": 0.5
+    },
+    {
+      "id": "f-b2-wd",
+      "room": "bed2",
+      "type": "wardrobe",
+      "label": "Wardrobe",
+      "x0": 15.38,
+      "y0": 15.4,
+      "x1": 15.98,
+      "y1": 17.2,
+      "height": 2.1,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-m-bed",
+      "room": "master",
+      "type": "bed",
+      "label": "Bed",
+      "x0": 11.32,
+      "y0": 9.2,
+      "x1": 13.42,
+      "y1": 11,
+      "height": 0.45,
+      "use": {
+        "zones": [
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "+x"
+          },
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "-y",
+            "span": [
+              0.9,
+              2.1
+            ]
+          },
+          {
+            "depth": 0.6,
+            "kind": "access",
+            "anyOf": "bed",
+            "side": "+y",
+            "span": [
+              0.9,
+              2.1
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-m-ns1",
+      "room": "master",
+      "type": "storage",
+      "label": "",
+      "x0": 11.32,
+      "y0": 8.75,
+      "x1": 11.72,
+      "y1": 9.15,
+      "height": 0.5
+    },
+    {
+      "id": "f-m-ns2",
+      "room": "master",
+      "type": "storage",
+      "label": "",
+      "x0": 11.32,
+      "y0": 11.05,
+      "x1": 11.72,
+      "y1": 11.45,
+      "height": 0.5
+    },
+    {
+      "id": "f-m-wd",
+      "room": "master",
+      "type": "wardrobe",
+      "label": "Wardrobe",
+      "x0": 12.6,
+      "y0": 12.25,
+      "x1": 14.4,
+      "y1": 12.83,
+      "height": 2.1,
+      "use": {
+        "zones": [
+          {
+            "side": "-y",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-m-wd2",
+      "room": "master",
+      "type": "wardrobe",
+      "label": "Wardrobe",
+      "x0": 15.38,
+      "y0": 8.6,
+      "x1": 15.98,
+      "y1": 9.8,
+      "height": 2.1,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-e-shower",
+      "room": "ensuite",
+      "type": "fixture",
+      "label": "Shower",
+      "x0": 14.62,
+      "y0": 12,
+      "x1": 15.52,
+      "y1": 12.83,
+      "height": 0.05,
+      "use": {
+        "zones": [
+          {
+            "side": "-y",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-e-wc",
+      "room": "ensuite",
+      "type": "fixture",
+      "label": "WC",
+      "x0": 15.3,
+      "y0": 10.7,
+      "x1": 15.7,
+      "y1": 11.4,
+      "height": 0.4,
+      "use": {
+        "zones": [
+          {
+            "side": "+y",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-e-basin",
+      "room": "ensuite",
+      "type": "fixture",
+      "label": "Basin",
+      "x0": 15.2,
+      "y0": 10.1,
+      "x1": 15.8,
+      "y1": 10.55,
+      "height": 0.85,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.5,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-c-wc",
+      "room": "bath",
+      "type": "fixture",
+      "label": "WC",
+      "x0": 14.25,
+      "y0": 13.85,
+      "x1": 14.65,
+      "y1": 14.54,
+      "height": 0.4,
+      "use": {
+        "zones": [
+          {
+            "side": "-y",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-c-basin",
+      "room": "bath",
+      "type": "fixture",
+      "label": "Basin",
+      "x0": 13.65,
+      "y0": 14.1,
+      "x1": 14.15,
+      "y1": 14.54,
+      "height": 0.85,
+      "use": {
+        "zones": [
+          {
+            "side": "-y",
+            "depth": 0.5,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-c-shower",
+      "room": "bath",
+      "type": "fixture",
+      "label": "Shower",
+      "x0": 15.08,
+      "y0": 13,
+      "x1": 15.98,
+      "y1": 13.9,
+      "height": 0.05,
+      "use": {
+        "zones": [
+          {
+            "side": "+y",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-car",
+      "room": "carport",
+      "type": "vehicle",
+      "label": "Generic car envelope 4.50 × 1.85 m",
+      "x0": 0.915,
+      "y0": 10,
+      "x1": 2.765,
+      "y1": 14.5,
+      "height": 1.65
+    },
+    {
+      "id": "f-table",
+      "room": "dining",
+      "type": "table",
+      "label": "Dining table",
+      "x0": 6,
+      "y0": 13.12,
+      "x1": 6.9,
+      "y1": 14.72,
+      "height": 0.75
+    },
+    {
+      "id": "f-chair-1",
+      "room": "dining",
+      "type": "chair",
+      "label": "",
+      "x0": 5.5,
+      "y0": 13.27,
+      "x1": 5.95,
+      "y1": 13.72,
+      "height": 0.45,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-chair-2",
+      "room": "dining",
+      "type": "chair",
+      "label": "",
+      "x0": 5.5,
+      "y0": 13.97,
+      "x1": 5.95,
+      "y1": 14.42,
+      "height": 0.45,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-chair-3",
+      "room": "dining",
+      "type": "chair",
+      "label": "",
+      "x0": 6.95,
+      "y0": 13.27,
+      "x1": 7.4,
+      "y1": 13.72,
+      "height": 0.45,
+      "use": {
+        "zones": [
+          {
+            "side": "+x",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-chair-4",
+      "room": "dining",
+      "type": "chair",
+      "label": "",
+      "x0": 6.95,
+      "y0": 13.97,
+      "x1": 7.4,
+      "y1": 14.42,
+      "height": 0.45,
+      "use": {
+        "zones": [
+          {
+            "side": "+x",
+            "depth": 0.6,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-sofa-b",
+      "room": "stair",
+      "type": "sofa",
+      "label": "Reading chair",
+      "x0": 10.38,
+      "y0": 11.9,
+      "x1": 11.13,
+      "y1": 12.65,
+      "height": 0.8
+    },
+    {
+      "id": "f-desk",
+      "room": "stair",
+      "type": "table",
+      "label": "Desk",
+      "x0": 9.9,
+      "y0": 10.13,
+      "x1": 11.1,
+      "y1": 10.73,
+      "height": 0.75,
+      "use": {
+        "zones": [
+          {
+            "side": "+y",
+            "depth": 0.75,
+            "kind": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-washer",
+      "room": "utility",
+      "type": "appliance",
+      "label": "Washer",
+      "x0": 4.44,
+      "y0": 17.48,
+      "x1": 5.04,
+      "y1": 18.08,
+      "height": 0.85,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.55,
+            "kind": "door"
+          },
+          {
+            "side": "-x",
+            "depth": 0.9,
+            "kind": "work"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-usink",
+      "room": "utility",
+      "type": "fixture",
+      "label": "Laundry sink",
+      "x0": 4.59,
+      "y0": 16.68,
+      "x1": 5.04,
+      "y1": 17.48,
+      "height": 0.9,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.9,
+            "kind": "work"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-k-prep",
+      "room": "kitchen",
+      "type": "counter",
+      "label": "Prep 1.16",
+      "x0": 5.16,
+      "y0": 17.485,
+      "x1": 6.32,
+      "y1": 18.085,
+      "height": 0.9,
+      "use": {
+        "zones": [
+          {
+            "side": "-y",
+            "depth": 0.9,
+            "kind": "work"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-k-sink",
+      "room": "kitchen",
+      "type": "fixture",
+      "label": "Sink",
+      "x0": 6.32,
+      "y0": 17.485,
+      "x1": 7.12,
+      "y1": 18.085,
+      "height": 0.9,
+      "use": {
+        "zones": [
+          {
+            "side": "-y",
+            "depth": 0.9,
+            "kind": "work"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-k-landS",
+      "room": "kitchen",
+      "type": "counter",
+      "label": "Landing",
+      "x0": 7.12,
+      "y0": 17.485,
+      "x1": 7.34,
+      "y1": 18.085,
+      "height": 0.9
+    },
+    {
+      "id": "f-k-corner",
+      "room": "kitchen",
+      "type": "counter",
+      "label": "Corner landing",
+      "x0": 7.34,
+      "y0": 17.4,
+      "x1": 7.94,
+      "y1": 18.085,
+      "height": 0.9
+    },
+    {
+      "id": "f-k-hob",
+      "room": "kitchen",
+      "type": "appliance",
+      "label": "Hob",
+      "x0": 7.34,
+      "y0": 16.8,
+      "x1": 7.94,
+      "y1": 17.4,
+      "height": 0.9,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.9,
+            "kind": "work"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-k-landH",
+      "room": "kitchen",
+      "type": "counter",
+      "label": "Landing",
+      "x0": 7.34,
+      "y0": 16.5,
+      "x1": 7.94,
+      "y1": 16.8,
+      "height": 0.9
+    },
+    {
+      "id": "f-k-pantry",
+      "room": "kitchen",
+      "type": "storage",
+      "label": "Pantry (tall)",
+      "x0": 7.34,
+      "y0": 15.9,
+      "x1": 7.94,
+      "y1": 16.5,
+      "height": 2.1,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.6,
+            "kind": "door"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f-k-fridge",
+      "room": "kitchen",
+      "type": "appliance",
+      "label": "Fridge",
+      "x0": 7.24,
+      "y0": 15.25,
+      "x1": 7.94,
+      "y1": 15.9,
+      "height": 1.8,
+      "use": {
+        "zones": [
+          {
+            "side": "-x",
+            "depth": 0.65,
+            "kind": "door"
+          },
+          {
+            "side": "-x",
+            "depth": 0.9,
+            "kind": "work"
+          }
+        ]
+      }
+    }
+  ],
+  "facade": {
+    "evidence": "Front-elevation relationships taken from REF-FRONT and checked against the plan by tools/check-v2.mjs",
+    "order": [
+      {
+        "label": "carport",
+        "x": 1.85
+      },
+      {
+        "label": "large glazing",
+        "opening": "G-LIV-F"
+      },
+      {
+        "label": "entrance door",
+        "opening": "D-ENT"
+      },
+      {
+        "label": "master window 1",
+        "opening": "W-M1"
+      },
+      {
+        "label": "master window 2",
+        "opening": "W-M2"
+      }
+    ],
+    "entranceCanopy": {
+      "x0": 7.9,
+      "x1": 11.3,
+      "y0": 7.4,
+      "y1": 10,
+      "underside": 2.75,
+      "thickness": 0.2
+    },
+    "shadingCanopy": {
+      "x0": 11.2,
+      "x1": 15.2,
+      "y0": 7.85,
+      "y1": 8.3,
+      "underside": 2.75,
+      "thickness": 0.15
+    },
+    "entranceFeature": {
+      "label": "Wood-look entrance panel",
+      "x0": 9.5,
+      "x1": 11.2,
+      "y": 10,
+      "depth": 0.06,
+      "height": 2.75,
+      "material": "wood"
+    },
+    "stoneFeature": {
+      "label": "Stone-look entrance cladding",
+      "x0": 9.2,
+      "x1": 9.5,
+      "y": 10,
+      "depth": 0.07,
+      "height": 2.75,
+      "material": "stone"
+    },
+    "entranceSteps": {
+      "count": 3,
+      "going": 0.3,
+      "x0": 8.3,
+      "x1": 10.9
+    }
+  },
+  "roof": {
+    "evidence": "ASSUMED flat roof slabs with a parapet, for appearance and the roof-removal cutaway only; not a structural, waterproofing or drainage design.",
+    "slabs": [
+      {
+        "id": "main",
+        "x0": 3.5,
+        "y0": 9.8,
+        "x1": 16.3,
+        "y1": 18.4
+      },
+      {
+        "id": "master-wing",
+        "x0": 11,
+        "y0": 8.1,
+        "x1": 16.3,
+        "y1": 10
+      }
+    ],
+    "pv": {
+      "evidence": "INDICATIVE FUTURE PV after initial construction (R14/R15); layout, orientation, structure and upper-floor conflict unresolved.",
+      "tiltDegrees": 10,
+      "standoff": 0.35,
+      "rowDepth": 1.1,
+      "rowGap": 0.45,
+      "arrays": [
+        {
+          "x0": 4.3,
+          "x1": 15.5,
+          "y0": 15,
+          "y1": 17.9
+        }
+      ]
+    },
+    "stairTower": {
+      "x0": -0.115,
+      "y0": 15.485,
+      "x1": 3.815,
+      "y1": 18.315,
+      "height": 2.4,
+      "wallThickness": 0.23,
+      "door": {
+        "face": "east",
+        "y0": 15.715,
+        "y1": 16.615,
+        "height": 2.1
+      },
+      "window": {
+        "face": "front",
+        "x0": 1,
+        "x1": 2,
+        "sill": 1,
+        "head": 1.8
+      },
+      "evidence": "ASSUMED stair tower over the stairwell (roof access for PV maintenance; the future upper floor would continue from the same landing). Height, structure and waterproofing are not designed."
+    },
+    "railing": {
+      "heightAboveParapet": 0.9,
+      "postSpacing": 1.2,
+      "slabs": [
+        "main",
+        "master-wing"
+      ],
+      "evidence": "ASSUMED steel safety railing on the main-roof parapets (as in the reference aerial); not a guarding design."
+    }
+  },
+  "views": {
+    "evidence": "Cameras: position [x, height above the road datum, y] and target [x, height above the finished floor, y]. Presentation only. frameFreeArea frames the whole site inside the part of the window not covered by the controls and panels. plan / planSheet = Plan-view and SVG-sheet extents. aerial = oblique view of the whole site: target [x, y], direction, sphere radius that must fit.",
+    "frameFreeArea": true,
+    "front": {
+      "position": [
+        8.2,
+        2.6,
+        -21
+      ],
+      "target": [
+        8.2,
+        0.6,
+        10
+      ],
+      "fov": 38
+    },
+    "frontage": {
+      "position": [
+        -3.2,
+        4,
+        -12
+      ],
+      "target": [
+        5.2,
+        -1.2,
+        0.4
+      ],
+      "fov": 48,
+      "label": "Frontage"
+    },
+    "gate": {
+      "position": [
+        4.6,
+        2.2,
+        -8.8
+      ],
+      "target": [
+        2,
+        -0.3,
+        -0.6
+      ],
+      "fov": 46,
+      "label": "Gate"
+    },
+    "aerial": {
+      "target": [
+        8.2,
+        8
+      ],
+      "targetUp": -0.2,
+      "dir": [
+        -0.62,
+        0.66,
+        1
+      ],
+      "radius": 12.9
+    },
+    "cutaway": {
+      "target": [
+        8.2,
+        8.6
+      ],
+      "targetUp": -0.2,
+      "dir": [
+        0.35,
+        1.2,
+        0.8
+      ],
+      "radius": 13
+    },
+    "plan": {
+      "x0": -1.4,
+      "x1": 18.6,
+      "y0": -5,
+      "y1": 19.8
+    },
+    "planSheet": {
+      "x0": -0.6,
+      "x1": 18.4,
+      "y0": -5.2,
+      "y1": 20.7
+    },
+    "carport": {
+      "position": [
+        0.2,
+        14.6,
+        1.2
+      ],
+      "target": [
+        3.4,
+        -0.9,
+        11.9
+      ],
+      "fov": 40,
+      "label": "Carport",
+      "cutaway": true
+    },
+    "stair": {
+      "position": [
+        -4.8,
+        11.5,
+        10.2
+      ],
+      "target": [
+        1.9,
+        0.6,
+        16.9
+      ],
+      "fov": 46,
+      "label": "Stair",
+      "cutaway": true
+    },
+    "rear": {
+      "position": [
+        4.2,
+        11,
+        23.2
+      ],
+      "target": [
+        1.9,
+        -0.3,
+        18.7
+      ],
+      "fov": 48,
+      "label": "Rear yard"
+    },
+    "service": {
+      "position": [
+        10.2,
+        11.5,
+        10.6
+      ],
+      "target": [
+        4.2,
+        0.4,
+        16.4
+      ],
+      "fov": 46,
+      "label": "Service area",
+      "cutaway": true
+    }
+  },
+  "unresolved": {
+    "evidence": "Items that must stay visible until professionals and measured evidence close them",
+    "items": [
+      {
+        "id": "gate",
+        "title": "Vehicle gate: space and operation",
+        "text": "The gate stands on the main front-wall line, its base derived from the driveway surface. Sliding right meets the pedestrian entrance and the wall; sliding left runs beyond the symbolic boundary; outward swing sweeps the drain crossing and a waiting car; inward swing shows a clear footprint but is not declared workable (vehicle clearance, ramp surface and automatic operation are unchecked)."
+      },
+      {
+        "id": "waiting",
+        "title": "Waiting car outside the gate",
+        "text": "With the verge removed only 1.585 m lies between the closed gate and the road edge; a waiting car stands on the drain crossing and projects about 2.9 m into the carriageway (display width, not measured). Automatic opening shortens the wait but does not create waiting space. Not resolved."
+      },
+      {
+        "id": "drain",
+        "title": "Drain crossings (schematic)",
+        "text": "The driveway and the pedestrian route both cross the open roadside drain on schematic slabs that keep the channel open; span, supports, capacity, levels and authority permission are unresolved."
+      },
+      {
+        "id": "frontage",
+        "title": "Ownership of the frontage strip",
+        "text": "The verge geometry is removed but the uncertainty stays: whether the retaining edge, the planting strip, the apron and the bottom landing in front of the main wall belong to the parcel is unknown; they may be road reserve."
+      },
+      {
+        "id": "retaining",
+        "title": "Retaining edge and excavation",
+        "text": "The visible retaining face is about 1.0 m (OWNER-ESTIMATED — TO BE VERIFIED). Structure, foundation, drainage, the toe against the drain and the real levels are not specified. The lower carport (B) needs excavation and retaining against the raised garden; drainage and flooding of the lowered pad are unchecked."
+      },
+      {
+        "id": "carport",
+        "title": "Carport level A vs B",
+        "text": "A (V2.3 level) keeps the 19%–22% climb; B (lower) reduces it but adds garden steps and a longer service stair. Neither is a vehicle-clearance, drainage or retaining finding."
+      },
+      {
+        "id": "walk",
+        "title": "Carport walking route",
+        "text": "The route is stepped (not step-free). The walking strip shares the passenger door-opening space, the landing stands proud of the ramp edge, and the service stair may intrude into the driver-side door zone (all flagged). Handrails, lighting and a pedestrian gate are not designed."
+      },
+      {
+        "id": "envelope",
+        "title": "Conceptual envelope — not the parcel",
+        "text": "The near-square envelope is an ASSUMED composition frame. The land is OWNER-ESTIMATED as almost square; boundaries, dimensions and orientation are unknown. No site fit, setback or boundary distance is claimed."
+      },
+      {
+        "id": "stair",
+        "title": "Stair in the utility room: compliance and structure",
+        "text": "The half-turn stair (18 risers of about 178 mm, 220 mm going, 0.90 m flights) is drawn geometry only. Rise, going, width, headroom, handrails, the stairwell opening, the half-landing and the stair tower need design and verification against the applicable Sri Lankan regulations by qualified professionals."
+      },
+      {
+        "id": "tower-pv",
+        "title": "Stair tower and PV",
+        "text": "The 2.40 m stair tower stands about 0.6 m west of the indicative PV array and may shade it late in the day; the site orientation is unknown. PV relocation or removal for a future upper floor remains unresolved (R13–R15)."
+      },
+      {
+        "id": "yard",
+        "title": "Rear service yard on an unverified strip",
+        "text": "The yard uses the 1.1 m rear strip of the CONCEPTUAL envelope; its landing is about 0.87 m deep (less than 0.90 m). Rear boundary, drainage, canopy structure and access along the strip are unverified."
+      },
+      {
+        "id": "window",
+        "title": "Utility window beside the stair",
+        "text": "Kept as fixed toughened glazing with a 1.50 m sill (owner default); guarding beside the lower flight is TO BE VERIFIED."
+      },
+      {
+        "id": "landings",
+        "title": "Half-landing 0.855 m and rear landing 0.87 m",
+        "text": "Both stay below the 0.90 m design target (provisional criteria, not legal limits) and stay flagged. Treads, headroom and door widths were not changed to hide them. Professional stair, guarding and structure design is still required."
+      },
+      {
+        "id": "open-living",
+        "title": "Open living/hall: structure and future floor",
+        "text": "W-LIV-E is removed in the concept only. Whether it supports the roof slab or a future upper-floor wall is unknown; a beam, column or other support must be designed by a qualified structural engineer. Gross floor area does not increase."
+      },
+      {
+        "id": "tv-window",
+        "title": "TV wall and moved side window",
+        "text": "The TV stands on the carport-side wall; the side window W-LIV-W moves 2.0 m toward the rear to light the dining area. Glare from the front glazing is side-on; carport privacy for the window is unresolved."
+      },
+      {
+        "id": "optB-hall",
+        "title": "Laundry in the stair / utility hall (screen studied, not added)",
+        "text": "The washer and sink stand in the hall that also serves the future upper-floor stair, the back door and the carport door. A full-height screen on the west side of the laundry bay was studied: it would sit in a 0.06 m gap between the back-door route and the washer working space and turn the laundry into a dead-end bay, so it is not proposed. A door at the top of the stair (upper floor) and sound-absorbing finishes are suggested instead."
+      },
+      {
+        "id": "optB-wall",
+        "title": "Moved interior wall",
+        "text": "W-UK moves 1.40 m east; whether it or the old line carries the roof or a future upper floor is unknown and needs structural design. Laundry plumbing moves inside the house."
+      },
+      {
+        "id": "rear-landing",
+        "title": "Back-door landing 0.87 m (depends on the rear strip)",
+        "text": "The landing outside D-UB is as deep as the 1.1 m rear strip of the CONCEPTUAL envelope allows (0.87 m between the house wall and the rear boundary wall). Reaching 0.90 m needs about 0.03 m more strip depth, i.e. a survey and a boundary/setback decision; it is not obtained by moving the boundary in the model."
+      }
+    ]
+  },
+  "compaction": {
+    "evidence": "The V2.3 compact garden is preserved. Parent values are computed from the V2.3 dataset by tools/check-v2.mjs, which fails if they drift or if the garden grows.",
+    "parent": {
+      "revision": "V2.3",
+      "gardenAreaM2": 72.55,
+      "depthToPorchM": 7.15,
+      "depthToHouseWallM": 8.05
+    }
+  },
+  "carportRoute": {
+    "evidence": "ASSUMED carport-to-house walking route: parked car → walking strip beside the car (passenger side, at carport level) → level landing → derived steps through an opening in the driveway retaining wall → upper landing at garden level → garden path along the house front → west porch steps → porch → entrance door. It avoids the sloping driveway except for the level landing at its top edge. The number of steps follows the level difference and the riser rule. The external route is stepped and is NOT step-free; nothing here is a stair-compliance or accessibility check (the indoor route to both bathrooms stays level).",
+    "clearWidth": 0.9,
+    "carWalkMin": 0.8,
+    "doorOpening": 0.7,
+    "doorZone": {
+      "fromNose": 0.9,
+      "toNose": 3.5
+    },
+    "walkY1": 9.62,
+    "proudTolerance": 0.03,
+    "rightWall": "W-CP-R2",
+    "leftWall": "W-CP-L",
+    "rearWall": "W-CP-REAR",
+    "upperLanding": {
+      "depth": 0.9,
+      "minDepth": 0.9
+    },
+    "service": {
+      "door": "D-UC",
+      "landingDepth": 0.9,
+      "stairWidth": 0.8,
+      "evidence": "ASSUMED raised service landing against the carport–utility door (level with the utility floor) and a stair along the left wall, derived from the level difference. It stays out of the parked-car envelope; it may intrude into the driver-side door-opening zone (flagged)."
+    },
+    "paramEvidence": {
+      "clearWidth": "ASSUMED minimum clear width of the stepped route",
+      "carWalkMin": "ASSUMED least walking strip beside the car",
+      "doorOpening": "ASSUMED practical car-door opening space beside the car (0.70 m)",
+      "doorZone": "ASSUMED cabin-door positions measured from the car nose (0.9–3.5 m)",
+      "walkY1": "ASSUMED north edge of the garden walk (kept clear of the right column)",
+      "proudTolerance": "a landing standing more than this above the ramp surface is flagged"
+    },
+    "flags": [
+      "carport:walk-door-zone",
+      "carport:service-stair-door-zone",
+      "carport:platform-kerb",
+      "carport:platform-on-driveway"
+    ],
+    "flagsEvidence": "Every finding computed by geometry-v2.js carportStudy() for options A and B at every test land must be flagged here, or the checks fail."
+  },
+  "scaleFigure": {
+    "height": 1.7,
+    "x": 5.25,
+    "y": -3.3,
+    "shoulder": 0.46,
+    "label": "1.70 m person",
+    "evidence": "ASSUMED average adult height 1.70 m (owner request 2026-10-22). Scale reference only: not a person measurement and not a design clearance. It stands in the carriageway in front of the pedestrian route (the road itself is a display width, not measured)."
+  },
+  "stairDesign": {
+    "room": "utility",
+    "type": "half-turn",
+    "foot": "east",
+    "lowerFlight": "rear",
+    "floorToFloor": {
+      "rule": "wallHeight + roofSlabThickness"
+    },
+    "maxRiser": 0.18,
+    "going": 0.22,
+    "width": 0.9,
+    "landingDepth": 0.9,
+    "waist": 0.2,
+    "headroomMin": 2,
+    "handrailHeight": 0.9,
+    "doors": {
+      "kitchen": "D-UK",
+      "service": "D-UC",
+      "back": "D-UB"
+    },
+    "evidence": "ASSUMED half-turn stair geometry: risers derived from the floor-to-floor height and maxRiser; going 0.22 m (owner default Q1, 2026-10-23). Rise, going, width, headroom, handrails and the opening/landing structure are TO BE VERIFIED against the applicable Sri Lankan regulations by qualified professionals; no compliance is claimed."
+  },
+  "serviceYard": {
+    "room": "serviceYard",
+    "door": "D-UB",
+    "going": 0.3,
+    "maxRiser": 0.17,
+    "landingDepthMin": 0.9,
+    "canopy": {
+      "aboveLand": 2.7,
+      "minClearAboveHeads": 0.05,
+      "evidence": "ASSUMED light translucent canopy; structure and drainage not designed. Raised from land + 2.35 m (first V2.5 build, below the back-door head) to land + 2.70 m so it clears the heads of the back door (+0.15 m) and the utility window (+0.05 m) in the rear wall below it (owner instruction 2026-10-23)."
+    },
+    "evidence": "ASSUMED covered rear service yard on the 1.1 m rear strip of the CONCEPTUAL envelope (not a surveyed depth): landing at floor level outside the back door, steps derived from the plinth, paving at land level, washer and sink. Rear boundary, drainage and access along the strip are unverified."
+  },
+  "usability": {
+    "title": "V2.6 usability screen",
+    "evidence": "PROVISIONAL design criteria of this study, chosen to catch furniture or door changes that make a doorway, a work position or a service route unusable. They are NOT legal limits, NOT accessibility checks, NOT ergonomic studies and NOT building-code checks. Dimensions are ASSUMED model values; nothing is surveyed.",
+    "claims": "No accessibility, ergonomic or code compliance is claimed.",
+    "criteria": {
+      "approachDepth": 0.6,
+      "workDepth": 0.9,
+      "routeWidth": 0.7,
+      "headroom": 2,
+      "chairPull": 0.6
+    },
+    "criteriaEvidence": {
+      "approachDepth": "PROVISIONAL: a free strip 0.60 m deep, as wide as the clear opening, on BOTH sides of every ordinary door (not only the swing side). At least routeWidth of it must stay free.",
+      "workDepth": "PROVISIONAL: 0.90 m of free standing space in front of a sink, hob, preparation counter, fridge or washer.",
+      "routeWidth": "PROVISIONAL: a 0.70 m wide swath along a service route, with the leaves of the doors it passes open at 90° (a 0.75 m opening leaves 0.71 m).",
+      "headroom": "PROVISIONAL: 2.00 m on routes and approach strips (the stair soffit above the half-landing and upper flight is tested).",
+      "chairPull": "PROVISIONAL: 0.60 m behind each dining chair."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "label": "living → dining → kitchen",
+        "points": [
+          [
+            4.4,
+            12.95
+          ],
+          [
+            4.4,
+            15.07
+          ],
+          [
+            6.2,
+            15.07
+          ],
+          [
+            6.2,
+            16.11
+          ]
+        ],
+        "doors": []
+      },
+      {
+        "id": "R2",
+        "label": "kitchen → D-UK → utility hall (washer, sink) → D-UB → rear yard (drying)",
+        "points": [
+          [
+            6.2,
+            16.11
+          ],
+          [
+            3.13,
+            16.11
+          ],
+          [
+            3.13,
+            18.75
+          ],
+          [
+            1.2,
+            18.75
+          ]
+        ],
+        "doors": [
+          "D-UK",
+          "D-UB"
+        ]
+      },
+      {
+        "id": "R3",
+        "label": "carport → D-UC → utility hall → D-UK → kitchen",
+        "points": [
+          [
+            2.42,
+            14.95
+          ],
+          [
+            2.42,
+            16.11
+          ],
+          [
+            6.2,
+            16.11
+          ]
+        ],
+        "doors": [
+          "D-UC",
+          "D-UK"
+        ]
+      },
+      {
+        "id": "R4",
+        "label": "carport → D-UC → utility hall → D-UB → rear yard",
+        "points": [
+          [
+            2.42,
+            14.95
+          ],
+          [
+            2.42,
+            16.11
+          ],
+          [
+            3.13,
+            16.11
+          ],
+          [
+            3.13,
+            18.75
+          ],
+          [
+            1.2,
+            18.75
+          ]
+        ],
+        "doors": [
+          "D-UC",
+          "D-UB"
+        ]
+      },
+      {
+        "id": "R5",
+        "label": "entrance → hall → bedrooms and common bathroom",
+        "points": [
+          [
+            8.7,
+            10.6
+          ],
+          [
+            8.7,
+            13.75
+          ],
+          [
+            13.15,
+            13.75
+          ]
+        ],
+        "doors": [
+          "D-ENT"
+        ]
+      },
+      {
+        "id": "R6",
+        "label": "entrance → living / dining (between sofa and table)",
+        "points": [
+          [
+            8.7,
+            10.6
+          ],
+          [
+            8.7,
+            12.77
+          ],
+          [
+            4.65,
+            12.77
+          ]
+        ],
+        "doors": [
+          "D-ENT"
+        ]
+      }
+    ],
+    "required": [
+      "f-washer",
+      "f-usink"
+    ],
+    "unplaced": [],
+    "issues": [
+      {
+        "id": "open-living",
+        "at": [
+          8,
+          11.4
+        ]
+      },
+      {
+        "id": "tv-window",
+        "at": [
+          3.95,
+          12.6
+        ]
+      },
+      {
+        "id": "optB-hall",
+        "at": [
+          4,
+          17.3
+        ]
+      },
+      {
+        "id": "optB-wall",
+        "at": [
+          5.06,
+          15.9
+        ]
+      },
+      {
+        "id": "rear-landing",
+        "at": [
+          3.2,
+          18.75
+        ],
+        "level": "land"
+      }
+    ],
+    "alternatives": [],
+    "reviewed": [
+      "Half-landing deepened to 0.90 m (declared S1r2). Back-door landing 0.87 m kept and flagged; it depends on the rear strip depth (survey / boundary decision)."
+    ]
+  },
+  "requirements": {
+    "stepFreeToBathrooms": {
+      "evidence": "CONFIRMED owner answer (INFO08): every enclosed ground-floor room reaches the common bathroom and the ensuite through rooms on the same finished-floor level. The check is level-only: door widths, turning space and wet-room falls are not checked.",
+      "bathrooms": [
+        "bath",
+        "ensuite"
+      ]
+    }
+  },
+  "drawing": {
+    "evidence": "Provisional dimension chains drawn on the plan sheet (wall centrelines). Chosen with the dataset so they follow the house block.",
+    "dimensions": [
+      {
+        "axis": "x",
+        "at": 19.75,
+        "values": [
+          0,
+          3.7,
+          8,
+          11.2,
+          11.9,
+          13.5,
+          14.5,
+          16.1
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 20.35,
+        "values": [
+          0,
+          16.1
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 16.55,
+        "values": [
+          8.3,
+          10,
+          12.9,
+          14.6,
+          18.2
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 16.9,
+        "values": [
+          8.3,
+          18.2
+        ]
+      }
+    ]
+  },
+  "title": "Open living/hall and utility hall with laundry (owner-selected basis)",
+  "notice": "V2.7 — PRELIMINARY CONCEPT — PROVISIONAL DIMENSIONS — NOT SURVEYED — NOT FOR CONSTRUCTION",
+  "subNotice": "Family review · provisional concept geometry · unresolved issues remain · site orientation and boundaries unverified",
+  "purpose": "Illustrative residential design study for comparison. Dimensions and site conditions are provisional; model checks do not establish buildability or compliance.",
+  "references": [],
+  "ownerAnswers": {
+    "items": []
+  },
+  "sheet": {
+    "date": "2026-10-25"
+  },
+  "publication": {
+    "audience": "public",
+    "sourceRecordsIncluded": false
+  },
+  "derivedFrom": {
+    "coordinateShifts": [
+      {
+        "text": "Concept coordinates preserved from the source revision. No survey fit or boundary confirmation is claimed."
+      }
+    ]
+  }
+}
