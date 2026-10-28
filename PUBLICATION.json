@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "20b3a654f3f220a2dddd996beae6f08e70def460",
+  "sourceCommit": "a529fd3befbac73c540b645cc605a76b34947456",
   "versions": [
     "V2.1",
     "V2.2",
@@ -9,7 +9,8 @@
     "V2.6",
     "V2.7",
     "V2.8",
-    "V2.9"
+    "V2.9",
+    "V2.10"
   ],
   "policy": "Runtime only; project records, source references and owner correspondence omitted. Geometry and warnings retained.",
   "files": [
@@ -30,8 +31,8 @@
     },
     {
       "file": "src/geometry-v2.js",
-      "bytes": 168813,
-      "sha256": "b90880b6acd31ea25932f73f2096f06c23289c3061b0b9eddc25abb6f32d1781"
+      "bytes": 170034,
+      "sha256": "651b214858694f2837d6dd8f11a657c6eaa86e27fac41b6c62f34a88f18696dc"
     },
     {
       "file": "src/section-svg.js",
@@ -117,6 +118,11 @@
       "file": "data/plans/v2-9-furniture-clearance-balance.json",
       "bytes": 70896,
       "sha256": "1bffb30b54644ab37a2f5358fc4a6c71ca18182145989cf5cccba86cab4e7d70"
+    },
+    {
+      "file": "data/plans/v2-10-open-service-survey-review.json",
+      "bytes": 70899,
+      "sha256": "37a053ea940fcc3c87379bc504cc49b47d2fdecd821498e512a44b13cd2eaf70"
     },
     {
       "file": "assets/starter-pack-r01/models/cars/Textures/colormap.png",
@@ -210,8 +216,8 @@
     },
     {
       "file": "versions.json",
-      "bytes": 1309,
-      "sha256": "1dce296f09c5b9cc35f529746a2300d3246807d6513340f1469d1d9d522b24de"
+      "bytes": 1466,
+      "sha256": "0c2580bfca1d8d46a63ee48291037ab860e67e0315065ae3d24aa18d07944e42"
     },
     {
       "file": "index.html",

@@ -1084,7 +1084,11 @@ export function validateFrontGate(plan, errors, warnings, info) {
     inside(F.mainWall, 'the main wall'); inside(rect(g.pierLeft.x0, g.pierLeft.y0, g.pierLeft.x1, g.pierLeft.y1), 'the left gate pier');
     // the crossing, bottom landing and flight start in the frontage zone in front of the main wall, outside the envelope by design
     for (const q of rr.filter(q => !['crossing', 'bottomLanding', 'flight'].includes(q.id))) inside(q.rect, `the route (${q.id})`);
-    if (!(S.landShape && /OWNER-ESTIMATED/.test(S.landShape.evidence) && S.landShape.dimensionsKnown === false)) errors.push('the almost-square land description must be recorded as OWNER-ESTIMATED with unknown dimensions');
+    if (S.surveyEvidence) {
+      const e=S.surveyEvidence;
+      if (!(Number.isFinite(e.areaHectares) && e.areaHectares>0 && Number.isFinite(e.areaM2) && Math.abs(e.areaHectares*10000-e.areaM2)<1e-6 && /document transcription/.test(e.evidence??''))) errors.push('survey evidence: invalid documentary area or missing transcription label');
+      if (!(S.landShape?.dimensionsKnown===false && /IMAGE-OBSERVED/.test(S.landShape.evidence??'') && e.boundaryCoordinates===null && e.boundaryLengths===null && e.spotLevels===null && e.modelAlignedToNorth===false && e.siteFit===false)) errors.push('survey evidence: undimensioned scan must not claim measured boundaries, levels, north alignment or site fit');
+    } else if (!(S.landShape && /OWNER-ESTIMATED/.test(S.landShape.evidence) && S.landShape.dimensionsKnown === false)) errors.push('the almost-square land description must be recorded as OWNER-ESTIMATED with unknown dimensions');
     info.envelope = { w: E.w, d: E.d, aspect: E.aspect, area: E.area };
   }
   info.garden = gardenMetrics(plan);
@@ -1785,7 +1789,9 @@ export function usabilityAudit(plan, { land = plan.levels.land.default, use = nu
       out.routes.push({ id: rt.id, label: rt.label, points: rt.points, legs: [], minClear: 0, steps: 0, ok: false });
       continue;
     }
-    const doors = (rt.doors ?? []).map(id => plan.openings.find(o => o.id === id)).filter(Boolean);
+    const missingDoors=(rt.doors??[]).filter(id=>!plan.openings.some(o=>o.id===id&&DOOR_KINDS.includes(o.kind)));
+    if(missingDoors.length) add('error','route-door',`route "${rt.label}": missing or invalid route doors ${missingDoors.join(', ')}`,{route:rt.id});
+    const doors = (rt.doors ?? []).map(id => plan.openings.find(o => o.id === id)).filter(o=>o&&DOOR_KINDS.includes(o.kind));
     const leaves = doors.map(o => ({ what: `the open leaf of ${o.id}`, rect: openLeafRect(plan, o) }));
     const ign = new Set(rt.ignore ?? []);
     const obstacles = [...solids, ...bodies.filter(b => !ign.has(b.id)), ...stairSolid, ...leaves, ...extraObstacles];
@@ -1801,7 +1807,7 @@ export function usabilityAudit(plan, { land = plan.levels.land.default, use = nu
       if (blockedBy.length) add('error', 'route-blocked', `route "${rt.label}": the leg (${p.map(f2).join(', ')}) → (${q.map(f2).join(', ')}) is blocked by ${blockedBy.join(', ')} (${f2(lo)} m free, ${f2(crit.routeWidth)} m needed)`, { route: rt.id, blockedBy });
       if (lowHead) add('error', 'route-headroom', `route "${rt.label}": less than ${f2(crit.headroom)} m headroom on the leg (${p.map(f2).join(', ')}) → (${q.map(f2).join(', ')})`, { route: rt.id });
     }
-    rec.ok = !rec.legs.some(l => l.blockedBy.length || l.lowHead);
+    rec.ok = !missingDoors.length && !rec.legs.some(l => l.blockedBy.length || l.lowHead);
     out.routes.push(rec);
   }
   // required laundry fixtures must be placed (or declared unplaced) so that "the box fits" cannot hide a missing sink
@@ -1878,6 +1884,7 @@ export function validateV26(plan, errors, warnings, info) {
 
 function unresolvedIssuesV26(plan, land) {
   const base = unresolvedIssuesV25(plan, land);
+  if(plan.site.surveyEvidence){const i=base.findIndex(i=>i.id==='envelope'),n=currentIssueNotes(plan).find(i=>i.id==='envelope');if(i>=0&&n)base[i]={...base[i],title:n.title,text:n.text};}
   const extra = (plan.usability.issues ?? []).map(i => { const t = currentIssueNotes(plan).find(q => q.id === i.id) ?? { title: i.id, text: '' }; const wall = i.id === 'optB-wall' ? plan.walls.find(w => w.id === 'W-UK') : null; return { id: i.id, title: t.title, at: wall ? [wall.at, i.at[1]] : i.at, level: i.level ?? 'floor', text: t.text }; });
   return [...base, ...extra];
 }

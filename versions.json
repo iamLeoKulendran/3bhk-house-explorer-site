@@ -43,5 +43,10 @@
     "id": "v2-9-furniture-clearance-balance",
     "revision": "V2.9",
     "title": "Closed kitchen — balanced lounge clearance correction"
+  },
+  {
+    "id": "v2-10-open-service-survey-review",
+    "revision": "V2.10",
+    "title": "Open kitchen / utility connections — survey evidence review"
   }
 ]
