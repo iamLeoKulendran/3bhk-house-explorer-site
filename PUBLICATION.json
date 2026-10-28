@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "a529fd3befbac73c540b645cc605a76b34947456",
+  "sourceCommit": "10133547fb81b014b2d2da91a00841bb6473cc8e",
   "versions": [
     "V2.1",
     "V2.2",
@@ -10,7 +10,8 @@
     "V2.7",
     "V2.8",
     "V2.9",
-    "V2.10"
+    "V2.10",
+    "V2.11"
   ],
   "policy": "Runtime only; project records, source references and owner correspondence omitted. Geometry and warnings retained.",
   "files": [
@@ -21,8 +22,8 @@
     },
     {
       "file": "src/build-v2.js",
-      "bytes": 82632,
-      "sha256": "e173da8d236413bba6fd2a11b108eafb903497a3e47c1fe2ef995657a0bd18ea"
+      "bytes": 82658,
+      "sha256": "da088916d108f6d6478dd1aaa3085787bad030afb6d98c9c671d1ee38bce5e11"
     },
     {
       "file": "src/geometry.js",
@@ -31,8 +32,8 @@
     },
     {
       "file": "src/geometry-v2.js",
-      "bytes": 170034,
-      "sha256": "651b214858694f2837d6dd8f11a657c6eaa86e27fac41b6c62f34a88f18696dc"
+      "bytes": 170133,
+      "sha256": "1880717266202fcb0572934e5800b182f827c5c820bb5a026c5bf3c8cf01b2e9"
     },
     {
       "file": "src/section-svg.js",
@@ -123,6 +124,11 @@
       "file": "data/plans/v2-10-open-service-survey-review.json",
       "bytes": 70899,
       "sha256": "37a053ea940fcc3c87379bc504cc49b47d2fdecd821498e512a44b13cd2eaf70"
+    },
+    {
+      "file": "data/plans/v2-11-compact-semi-enclosed-kitchen.json",
+      "bytes": 71514,
+      "sha256": "e418a8817781151149347abf1ad87d43ae05ef6daf2c16bd28ceb5498eb1fd56"
     },
     {
       "file": "assets/starter-pack-r01/models/cars/Textures/colormap.png",
@@ -216,8 +222,8 @@
     },
     {
       "file": "versions.json",
-      "bytes": 1466,
-      "sha256": "0c2580bfca1d8d46a63ee48291037ab860e67e0315065ae3d24aa18d07944e42"
+      "bytes": 1605,
+      "sha256": "ab4aa9063cacb3207451c7c0098f45d604f09128d182e0e8de22b096cf77c50a"
     },
     {
       "file": "index.html",

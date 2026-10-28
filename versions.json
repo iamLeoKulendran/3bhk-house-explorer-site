@@ -48,5 +48,10 @@
     "id": "v2-10-open-service-survey-review",
     "revision": "V2.10",
     "title": "Open kitchen / utility connections — survey evidence review"
+  },
+  {
+    "id": "v2-11-compact-semi-enclosed-kitchen",
+    "revision": "V2.11",
+    "title": "Compact replan — semi-enclosed kitchen"
   }
 ]

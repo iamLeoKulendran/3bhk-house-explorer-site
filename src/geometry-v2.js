@@ -430,7 +430,7 @@ export function validate(plan) {
       if (!o.swing && o.kind !== 'sliding-door') errors.push(`door ${o.id} has no swing`);
       const s = swingSector(plan, o);
       if (s) sectors.push({ o, s, rooms: [a, b] });
-    } else if (a && b && isEnclosed(rooms[a]) && isEnclosed(rooms[b])) {
+    } else if (o.kind !== 'servery' && a && b && isEnclosed(rooms[a]) && isEnclosed(rooms[b])) {
       warnings.push(`window ${o.id} sits between two interior spaces (${a} / ${b})`);
     }
   }
@@ -468,8 +468,8 @@ export function validate(plan) {
     const a = plan.furniture[i], b = plan.furniture[j];
     if (rectOverlap(rect(a.x0, a.y0, a.x1, a.y1), rect(b.x0, b.y0, b.x1, b.y1)) > 0) errors.push(`furniture ${a.id} overlaps ${b.id}`);
   }
-  // tall furniture in front of a window
-  for (const o of plan.openings.filter(o => !DOOR_KINDS.includes(o.kind))) {
+  // tall furniture in front of a window (a servery's counter is meant to stand under it)
+  for (const o of plan.openings.filter(o => !DOOR_KINDS.includes(o.kind) && o.kind !== 'servery')) {
     const g = openingGeom(plan, o); if (!g.wall) continue;
     const zone = g.wall.dir === 'h'
       ? rect(g.lo, g.band.y0 - 0.5, g.hi, g.band.y1 + 0.5) : rect(g.band.x0 - 0.5, g.lo, g.band.x1 + 0.5, g.hi);
@@ -1121,7 +1121,7 @@ function unresolvedIssuesFrontGate(plan, land) {
       text: `The drawn lawn and beds are ${f2(gm.area)} m²${parent ? ` (V2.2: ${f2(parent.gardenAreaM2)} m²)` : ''} and the garden is ${f2(gm.depthToPorch)} m deep to the porch${parent ? ` (V2.2: ${f2(parent.depthToPorchM)} m)` : ''}. The house block moved 2.0 m toward the road beside the carport, rigidly, with no room scaled and the driveway climb unchanged. The carport is 1.0 m shorter and the utility 1.0 m shallower (explicit changes). ASSUMED visual trial, not an owner-confirmed target.` },
     { id: 'envelope', title: 'Conceptual envelope — not the parcel', at: [E.rect.x1 - 2.0, E.rect.y1 - 0.8], level: 'land',
       text: `The near-square envelope (${f2(E.w)} × ${f2(E.d)} m, aspect ${f2(E.aspect)}) is an ASSUMED composition frame. The land is OWNER-ESTIMATED as almost square; its boundaries, dimensions and orientation are unknown. It is not derived from the 20-perch estimate and makes no site-fit, setback or boundary claim.` },
-    { id: 'stair', title: 'Future stair and PV', at: [...(rooms.stair.labelAt ?? [10.25, 11.4])], level: 'floor',
+    { id: 'stair', title: 'Future stair and PV', at: [...(rooms.stair?.labelAt ?? [10.25, 11.4])], level: 'floor',
       text: 'The owner prefers the future stair behind the carport or another suitable location (INFO08). V2.3 keeps the hall reserve because relocating it is a separate follow-up; it narrows the entry passage once built. Upper-floor structure and PV relocation or removal are unresolved (R13–R15).' },
     { id: 'utility', title: 'Utility enclosure, resized', at: [...(rooms.utility.labelAt ?? [1.85, 16.9])], level: 'floor',
       text: 'The utility is modelled enclosed (as in the aerial reference) and is smaller in V2.3 (about 8.4 m² clear, behind a 5.6 m carport) with its kitchen door moved; both are explicit changes. It is counted in the enclosed area.' },
@@ -1409,7 +1409,7 @@ function unresolvedIssuesV24(plan, land) {
       text: `One continuous route is drawn: crossing → bottom landing (now cut into the strip zone, level with the toe) → ${r.flight.risers} risers of ${(r.flight.riser * 1000).toFixed(0)} mm → upper landing → ${f2(r.path.length)} m garden path → ${r.porchSteps.risers} porch risers → porch → entrance. The flight has ${steps(plan, plan.levels.land.min).risers}–${steps(plan, plan.levels.land.max).risers} risers across the land range in one run; handrails, lighting, an intermediate landing and a step-free street entrance are NOT designed. A sliding gate to the right would cross this route.` },
     { id: 'envelope', title: 'Conceptual envelope — not the parcel', at: [En.rect.x1 - 2.0, En.rect.y1 - 0.8], level: 'land',
       text: `The near-square envelope (${f2(En.w)} × ${f2(En.d)} m, aspect ${f2(En.aspect)}) is an ASSUMED composition frame. The land is OWNER-ESTIMATED as almost square; its boundaries, dimensions and orientation are unknown. It is not derived from the 20-perch estimate and makes no site-fit, setback or boundary claim.` },
-    { id: 'stair', title: 'Future stair and PV', at: [...(rooms.stair.labelAt ?? [10.25, 11.4])], level: 'floor',
+    { id: 'stair', title: 'Future stair and PV', at: [...(rooms.stair?.labelAt ?? [10.25, 11.4])], level: 'floor',
       text: 'The owner prefers the future stair behind the carport or another suitable location (INFO08). V2.4 keeps the hall reserve because relocating it is a separate follow-up; it narrows the entry passage once built. Upper-floor structure and PV relocation or removal are unresolved (R13–R15).' },
   ];
 }

@@ -632,7 +632,7 @@ export function buildV2(env) {
       hb(frameDark, ...R(g.hi - fr, g.hi, -mid, mid), base, 0, o.head);
       hb(frameDark, ...R(g.lo, g.hi, -mid, mid), base, o.head - fr, o.head);
     } else if (!DOOR_KINDS.includes(o.kind)) {
-      hb(glass, ...R(g.lo + fr, g.hi - fr, -0.015, 0.015), base, o.sill + fr, o.head - fr, false);
+      if (o.kind !== 'servery') hb(glass, ...R(g.lo + fr, g.hi - fr, -0.015, 0.015), base, o.sill + fr, o.head - fr, false);
       for (const [a0, a1, b0, b1] of [[g.lo, g.lo + fr, o.sill, o.head], [g.hi - fr, g.hi, o.sill, o.head], [g.lo, g.hi, o.head - fr, o.head], [g.lo, g.hi, o.sill, o.sill + fr]]) hb(frameDark, ...R(a0, a1, -mid, mid), base, b0, b1);
       if (o.kind === 'glazing') for (const k of [1, 2]) { const a = g.lo + ((g.hi - g.lo) * k) / 3; hb(frameDark, ...R(a - 0.025, a + 0.025, -mid, mid), base, o.sill, o.head); }
       if (o.surround && out) {
