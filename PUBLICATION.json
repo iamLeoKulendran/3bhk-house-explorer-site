@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "10133547fb81b014b2d2da91a00841bb6473cc8e",
+  "sourceCommit": "71010cee7795f68ab7da8c6d43477d3c9ef36449",
   "versions": [
     "V2.1",
     "V2.2",
@@ -22,18 +22,18 @@
     },
     {
       "file": "src/build-v2.js",
-      "bytes": 82658,
-      "sha256": "da088916d108f6d6478dd1aaa3085787bad030afb6d98c9c671d1ee38bce5e11"
+      "bytes": 81651,
+      "sha256": "a3cf5cf05f622430a124b9677600633a2244c9eabb15e67c32d665e213075ddb"
     },
     {
       "file": "src/geometry.js",
-      "bytes": 25133,
-      "sha256": "eb51a5d3c544bced2147577ef92f495d0ab712300708d5bd7096f11ddec46228"
+      "bytes": 24674,
+      "sha256": "50b0ee6c19ce717fc1019430871d2711c547bf3406a6b32a8d226e18162f66b2"
     },
     {
       "file": "src/geometry-v2.js",
-      "bytes": 170133,
-      "sha256": "1880717266202fcb0572934e5800b182f827c5c820bb5a026c5bf3c8cf01b2e9"
+      "bytes": 168207,
+      "sha256": "b49ae9bf95d853b1ef1b3c1f7188aac4bcaa8075bc11267ad391b41abc342859"
     },
     {
       "file": "src/section-svg.js",
@@ -227,8 +227,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 3949,
-      "sha256": "06399042e68daf6d33937fb536400f431e10791a9cb790d28c7df3d2b70a92c2"
+      "bytes": 3871,
+      "sha256": "78512a88d14cc7777ff9f8651b9a0fbe83b8c0e2b3b926f49ccce2504ec75f96"
     },
     {
       "file": "public.css",
